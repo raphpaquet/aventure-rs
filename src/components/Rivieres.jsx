@@ -1,4 +1,4 @@
-import {Tab, Tabs} from 'react-bootstrap';
+// import {Tab, Tabs} from 'react-bootstrap';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
  
@@ -36,7 +36,7 @@ export default function Rivieres(props) {
 
   return (
     <div className="section accent">
-      <div className="container">
+      {/* <div className="container">
         <div className="section-title-group">
           <h2 className="section-heading centered">{content.title}</h2>
           <div className="section-subheading centered">{content.subtitle}</div>
@@ -76,7 +76,7 @@ export default function Rivieres(props) {
             </Tabs>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

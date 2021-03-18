@@ -85,7 +85,7 @@ function App(props) {
               <Activity language={language}
               />
               </div>
-              <Rivieres language={language}/>
+              {/* <Rivieres language={language}/> */}
             </Route>
             <Route path="/canoe">
               <Canoe language={language}/> 
