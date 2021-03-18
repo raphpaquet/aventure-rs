@@ -15,14 +15,14 @@ export default function Homepage(props) {
   let content = {
     English: {
       seoTitle: "Wild River Adventure | Pontiac, Outaouais",
-      description: "inflated tubes location to do river floating in Outaouais",
+      description: "Canoe camping adventures agency and tube renting in Outaouais",
       name: "Wild river adventure",
       summary: "Canoe Camping in Outaouais",
       button: "Book Online for 2021 season"
     },
     French: {
       seoTitle: "Aventure Rivière Sauvage",
-      description: "Location de tubes gonflables pour faire une descente de rivière",
+      description: "Agence d'aventures de canot camping et de location de tubes en Outaouais",
       name: "Aventure rivière sauvage",
       summary: "canot camping dans l'Outaouais",
       button: "Réserver en ligne pour la saison 2021"

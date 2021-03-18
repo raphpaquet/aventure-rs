@@ -7,7 +7,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import parse from "html-react-parser";
-import '../screens/Canoe.scss';
+import './Rivieres.scss';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -48,8 +48,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.5rem",
     flexGrow: 1,
     alignItems: "center",
-    width: '50%',
+    width: '70%',
     backgroundColor: 'transparent',
+    transform: 'translate(20%)'
   },
 }));
 
@@ -105,7 +106,7 @@ export default function ScrollableTabsRiver(props) {
 //className={classes.root}
   return (
     <div className='river-container'>
-      <AppBar position="static" color="default" >
+      <AppBar position="static" color="default" className="river-tab-container" >
         <Tabs
           value={value}
           onChange={handleChange}
@@ -121,33 +122,33 @@ export default function ScrollableTabsRiver(props) {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <div className="activity-container">
-          <img className="activity-img" src="/images/river.jpg" alt="" style={{width:"80vw"}}/>
-          <h3 className="activity-summary" style={{marginTop:"2rem"}}>{content.titleFirst}</h3>
-          <div className="activity-text-container">
+        <div className="riviere-container">
+          <img className="riviere-img" src="/images/river.jpg" alt="" />
+          <h3 className="riviere-summary">{content.titleFirst}</h3>
+          <div className="riviere-text-container">
             {parse(content.activityDescriptionFirst)}
               </div>
             <button className="button reserve">{content.reserve}</button>
           </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <div className="activity-container">
-          <img className="activity-img" src="/images/river.jpg" alt="" style={{width:"80vw"}}/>
-          <h3 className="activity-summary" style={{marginTop:"2rem"}}>{content.titleSecond}</h3>
-          <div className="activity-text-container">
+        <div className="riviere-container">
+          <img className="riviere-img" src="/images/river.jpg" alt="" />
+          <h3 className="riviere-summary">{content.titleSecond}</h3>
+          <div className="riviere-text-container">
             {parse(content.activityDescriptionSecond)}
               </div>
             <button className="button reserve">{content.reserve}</button>
           </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <div className="activity-container">
-          <img className="activity-img" src="/images/river.jpg" alt="" style={{width:"80vw"}}/>
-          <h3 className="activity-summary" style={{marginTop:"2rem"}}>{content.titleThird}</h3>
-          <div className="activity-text-container">
+        <div className="riviere-container">
+          <img className="riviere-img" src="/images/river.jpg" alt="" />
+          <h3 className="riviere-summary">{content.titleThird}</h3>
+          <div className="riviere-text-container">
             {parse(content.activityDescriptionthird)}
               </div>
-            <button className="button reserve">{content.reserve}</button>
+            <button className="button reserve river-btn" style={{marginTop:"2rem"}}>{content.reserve}</button>
           </div>
       </TabPanel>
     </div>

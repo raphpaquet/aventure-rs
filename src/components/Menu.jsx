@@ -14,7 +14,6 @@ export default function Menu({ open, ref }) {
         <ul className="burger-list-action">
           <Link to="/"><li className="burger-action-li">Activités</li></Link>
         <DropDownMenu 
-          
           title={"Les Activités"} 
           first={"Canot"} 
           firstLink={'/canoe'} 

@@ -1,11 +1,7 @@
-// import {Tab, Tabs} from 'react-bootstrap';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import ScrollableTabsRiver from '../components/ScrollableTabsRiver';
  
 export default function Rivieres(props) {
 
-  const [key, setKey] = useState('noire');
 
 
   let content = {

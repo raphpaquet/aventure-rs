@@ -29,3 +29,14 @@
     opacity: 0.8;
   }
 }
+
+@media screen and (max-width: 770px) {
+  .riviere {
+    .river-description {
+      width: 80%;
+    }
+    .river-image {
+      width: 50rem;
+    }
+  }
+}

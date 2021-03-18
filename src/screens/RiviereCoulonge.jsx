@@ -42,6 +42,7 @@ export default function RiviereCoulonge(props) {
         <img src="./images/river.jpg" alt="riviere Mauve" className="river-image"/>
         <p>Facilisis gravida neque convallis a cras semper auctor. Nec feugiat in fermentum posuere urna nec tincidunt praesent. Vivamus arcu felis bibendum ut tristique et. Vel risus commodo viverra maecenas accumsan lacus vel. Tincidunt vitae semper quis lectus nulla. Risus sed vulputate odio ut enim blandit volutpat maecenas.</p>
         <MapContainer 
+          className="river-map"
           position={positionCoulonge}
           name={name}
         />
