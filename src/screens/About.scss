@@ -1,0 +1,121 @@
+@import '../assets/_variables.scss';
+
+#about {
+  .bg-image {
+    position: absolute;
+    filter: opacity(0.3);
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100vh;
+  }
+  .title {
+    float: left;
+    margin-left: 10rem;
+    margin-top: 5rem;
+    color: $primary-color;
+    letter-spacing: 0.2em;
+    font-weight: bold;
+  }
+  .about-container{
+    // position: relative;
+    display: flex;
+    flex-flow: wrap;
+    margin: 15rem 10%;
+    .about-content {
+      display: flex;
+      margin: 5rem;
+      .about-text {
+        text-align: left;
+        margin: 2rem 5rem;
+        h3 {
+          color: rgb(0, 32, 0);
+        }
+      }
+      .about-img {
+        width: 30rem;
+        height: auto;
+        box-shadow: 8px 6px 13px #373a37;
+        .hide {
+          visibility: visible;
+        }
+      }
+      p {
+        font-family: $font-text;
+        margin: 2rem 0rem;
+        text-align: justify;
+        font-weight: 400;
+      }
+    }
+  }
+  @media screen and (max-width: 991px) {
+    .about-container {
+      margin: 15rem 2%;
+      .about-content {
+
+        .about-img {
+          height: 30rem;
+          width: auto;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .about {
+      overflow-x: hidden;
+    }
+    .title {
+      margin-left: 2rem;
+      text-align: center;
+    }
+    .bg-image {
+      max-width: 100vh;
+    }
+    .about-container {
+      .about-content {
+        margin: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .about-img {
+          width: 20rem;
+          height: auto;
+          margin-bottom: 3rem;
+        }
+      }
+    }
+    .hide {
+      visibility: hidden;
+      position: absolute;
+    }
+  }
+  
+  @media screen and (max-width: 479px) {
+    #about {
+      overflow-x: hidden;
+    }
+    .bg-image {
+      max-width: 100vh;
+    }
+    .about-container {
+      .about-content {
+        margin: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .about-img {
+          width: 20rem;
+          height: auto;
+        }
+      }
+    }
+    .hide {
+      visibility: hidden;
+      position: absolute;
+    }
+  }
+}
+  
+  
+

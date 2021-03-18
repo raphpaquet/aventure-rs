@@ -1,0 +1,354 @@
+@import './assets/variables';
+$color-contrast: rgb(247, 200, 72);
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 16px * 62.5 = 10px = 1rem */
+  width: 100% !important;
+  overflow: scroll;
+}
+body {
+  background-color: white;
+  font-size: 1.6rem ;
+  font-family: $font-text;
+  height: 100%;
+  margin: 0;
+  width: 100% !important;
+}
+
+a {
+  text-decoration: none !important;
+  outline: none !important;
+}
+
+
+.title {
+  font-family: $font-title;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: black;
+}
+
+h1 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 38px;
+  line-height: 44px;
+  font-weight: 700;
+}
+
+h2 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 300;
+  text-align: center;
+}
+h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #676770;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 300;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+}
+h4 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}
+h5 {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  color: #676770;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+h6 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+}
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 25px;
+  font-weight: 300;
+}
+.fullwidth-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+}
+.button {
+  border: 0;
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 10px 20px 12px;
+  border-radius: 4px;
+  background-color: #edeff2;
+  opacity: 1;
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+  -webkit-transition: background-color 300ms ease;
+  transition: background-color 300ms ease;
+  color: #49647b;
+  font-size: 10px;
+  line-height: 21px;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  outline: none;
+  &:hover {
+    background-color: $color-contrast;
+    color: #404047
+  }
+  .w--current{
+    background-color: $color-contrast;
+  }
+  .full-width {
+    display: block;
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .tab {
+    margin-right: 8px;
+    margin-left: 8px;
+    background-color: #ecf0f1;
+    &:hover {
+      background-color: $color-contrast;
+    }
+    .w--current {
+      background-color: #edeff2;
+      &:hover {
+        background-color: #f8c740;
+      }
+    }
+  }
+}
+/* SECTION ACTIVITY */
+.section {
+  position: relative;
+  padding: 8rem 10rem;
+  background-color: #fff;
+  color: #a0a0a0;
+  text-align: center;
+}
+.white-box {
+  padding: 15px;
+  border: 1px solid #edeff2;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: center;
+  -o-object-fit: fill;
+  object-fit: fill;
+  p {
+    color: rgb(160, 160, 160);
+  }
+}
+.container {
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+}
+.column {
+  height: 100%;
+}
+.row {
+  display: flex;
+  margin-right: -1rem;
+  margin-left: -1rem;
+  .col {
+    min-height: 0.1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 33.33333%;
+    text-align: left;
+    .col-3 {
+      margin: 1rem;
+    }
+  }
+}
+.grid-image {
+  display: block;
+  padding: 20px;
+  margin: 20px auto;
+  width: 10rem;
+  height: auto;
+  object-fit: fill;
+  text-align: center;
+  background-color: $color-contrast;
+  border-radius: 30%;
+  border: 10px solid white;
+  box-shadow: 0px 0px 1px $color-contrast;
+}
+.section-title-group {
+  margin-bottom: 6rem;
+}
+.section-heading {
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+}
+.centered {
+  color: #676770;
+  font-size: 3rem;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
+.section-subheading {
+  color: #8e8e9c;
+  font-size: 1.8rem;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
+.white-box {
+  opacity: 1; 
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); 
+  transform-style: preserve-3d;
+}
+
+
+/* SECTION RIVIERES */
+.accent {
+  background: #ebebeb !important;
+}
+.tabs-wrapper {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tabs-links {
+  color: rgb(104, 100, 100);
+  font-family: $font-text;
+  font-size: 1.5rem;
+  border: 0;
+  min-height: 0;
+  text-transform: uppercase;
+}
+.nav-link {
+  background-color: transparent;
+  color: #7a7a7e;
+}
+#tab-menu-tabpane {
+  background-color: green;
+}
+.nav-tabs {
+  margin-bottom: 3rem !important;
+  border: 0 !important;
+  .active {
+    background-color: white !important;
+    transition: background-color 300ms ease ;
+  }
+}
+.fullwidth-image {
+  width: 50rem;
+  height: auto;
+  margin-right: 0;
+}
+
+.hidden {
+  visibility: hidden;
+  position: absolute;
+}
+.plus {
+  border: 1px solid gray;
+  margin-top: 2rem;
+}
+.absolute {
+  position: absolute;
+}
+
+@media screen and (max-width: 991px) {
+  .section {
+    padding: 8rem 3rem;
+  }
+  .grid-image {
+    width: 50%;
+    padding: 1.5rem
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .button {
+    .full-width {
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .tab {
+      font-size: 1.2rem;
+    }
+  }
+  .grid-image {
+    width: 35%;
+  }
+  .row {
+    .col {
+      width: auto;
+    }
+    .col-4 {
+      flex: auto;
+      max-width: none;
+      p {
+        padding: 0;
+      }
+    }
+  }
+  .container {
+    padding: 8rem 1rem;
+  }
+  .white-box {
+    margin-bottom: 3rem;
+  }
+  .grid-image {
+    width: 20%;
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  h2 {
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+  }
+  .section {
+    padding: 2rem 4rem;
+  }
+  .section-title-group {
+    margin-top: 4rem;
+  }
+  .button {
+    margin-bottom: 2.5rem;
+  }
+  .grid-image {
+    width: 35%;
+  }
+  .fullwidth-image {
+    width: 30rem;
+    height: auto;
+  }
+  .nav {
+    display: flex;
+    flex-direction: column;
+  }
+}
