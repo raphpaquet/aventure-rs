@@ -1,19 +1,27 @@
 import './Riviere.scss';
 import { Helmet } from 'react-helmet';
 import MapContainer from '../components/Map';
+import Modal from '../components/Modal';
 
 
 export default function RiviereNoire(props) {
 
+  const data="/PDF/DumoinePDF.pdf";
+  const positionNoire = {
+    lat: 46.015310, 
+    lng: -76.767663
+  }
+  const name = "Noire"
+
   let content = {
     English: {
       seoTitle: "Riviere Noire Outaouais",
-      description: "Description of the Riviere Noire in Pontiac, Outaouais",
+      description: "The Black river is located in the municipality of Pontiac, Outaouais. This river is very popular with canoeists. ",
       riverDescription: ""
     },
     French: {
       seoTitle: "Riviere Noire Outaouais",
-      description: "Descriptif de la Riviere Noire dans Pontiac, Outaouais",
+      description: "La Rivière Noire est située dans la municipalité de Pontiac, Outaouais. Cette rivière est très prisée par les amateurs de canot",
       riverDescription: ""
     }
   }
@@ -35,6 +43,12 @@ export default function RiviereNoire(props) {
         <img src="./images/river.jpg" alt="riviere noire" className="river-image"/>
         <p>Facilisis gravida neque convallis a cras semper auctor. Nec feugiat in fermentum posuere urna nec tincidunt praesent. Vivamus arcu felis bibendum ut tristique et. Vel risus commodo viverra maecenas accumsan lacus vel. Tincidunt vitae semper quis lectus nulla. Risus sed vulputate odio ut enim blandit volutpat maecenas.</p>
         <MapContainer />
+        <div className="carte-container">
+        <Modal 
+          data={data}
+          language={props.language}
+        />
+      </div>
         <p>Molestie nunc non blandit massa enim nec dui nunc mattis. Nunc consequat interdum varius sit amet mattis vulputate enim nulla. Non curabitur gravida arcu ac tortor dignissim convallis aenean. Nunc congue nisi vitae suscipit tellus mauris. Iaculis urna id volutpat lacus laoreet. Magnis dis parturient montes nascetur ridiculus. Enim facilisis gravida neque convallis. Tortor at risus viverra adipiscing at in tellus integer feugiat. Euismod lacinia at quis risus sed vulputate odio ut enim. Ornare suspendisse sed nisi lacus. Neque ornare aenean euismod elementum nisi quis.</p>
       </div>
       <div className="wave-container">

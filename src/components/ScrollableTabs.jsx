@@ -56,41 +56,33 @@ export default function ScrollableTabsButtonAuto(props) {
 
   let content = {
     English: {
-      labelFirst: "2 days",
-      titleFirst: "Canoe Camping 2 days adventure",
+      labelFirst: "Rivière Noire",
+      titleFirst: "Canoe Camping on Rivière Noire",
       activityDescriptionFirst: `<p className='activity-text'> Length : 2 days </p><p className='activity-text'>Difficulty: beginner/easy</p>
-      <p className='activity-text'>Price: starting at 50$</p><p className='activity-text'>Inclusions: Canoe & Shuttle to departure point </p>`,
-      labelSecond: "3 days",
-      titleSecond: "Canoe Camping 3 days adventure",
+      <p className='activity-text'>Price: starting at 50$</p><p className='activity-text'>Inclusions: Canoe & Shuttle to launching point </p>`,
+      labelSecond: "Rivière Coulonge",
+      titleSecond: "Canoe Camping on Rivière Coulonge",
       activityDescriptionSecond: `<p className='activity-text'> Length : 2 days </p><p className='activity-text'>Difficulty: beginner/easy</p>
-      <p className='activity-text'>Price: starting at 50$</p><p className='activity-text'>Inclusions: Canoe & Shuttle to departure point </p>`,
-      labelThird: "4 days",
-      titleThird: "Canoe Camping 4 days adventure",
+      <p className='activity-text'>Price: starting at 50$</p><p className='activity-text'>Inclusions: Canoe & Shuttle to launching point </p>`,
+      labelThird: "Rivière Dumoine",
+      titleThird: "Canoe Camping on Rivière Dumoine",
       activityDescriptionthird: `<p className='activity-text'> Length : 2 days </p><p className='activity-text'>Difficulty: beginner/easy</p>
-      <p className='activity-text'>Price: starting at 50$</p><p className='activity-text'>Inclusions: Canoe & Shuttle to departure point </p>`,
-      labelFourth: "6 days",
-      titleFourth: "Canoe Camping 6 days adventure",
-      activityDescriptionFourth: `<p className='activity-text'> Length : 2 days </p><p className='activity-text'>Difficulty: beginner/easy</p>
-      <p className='activity-text'>Price: starting at 50$</p><p className='activity-text'>Inclusions: Canoe & Shuttle to departure point </p>`,
+      <p className='activity-text'>Price: starting at 50$</p><p className='activity-text'>Inclusions: Canoe & Shuttle to launching point </p>`,
       reserve: "Book online"
      },
     French: {
-      labelFirst: "2 jours",
-      titleFirst: "Aventure de Canot Camping 2 jours",
+      labelFirst: "Rivière Noire",
+      titleFirst: "Canot Camping sur la Rivière Noire",
       activityDescriptionFirst: `<p className='activity-text'> Durée : 2 jours </p><p className='activity-text'>Difficulté: débutant/facile</p>
-      <p className='activity-text'>Prix: À partir de 50$/jour</p><p className='activity-text'>Inclusions: Canot & Navette jusqu'au point de départ </p>`,
-      labelSecond: "3 jours",
-      titleSecond: "Aventure de Canot Camping 3 jours",
+      <p className='activity-text'>Prix: À partir de 50$/jour</p><p className='activity-text'>Inclusions: Canot & Navette jusqu'au point de mise à l'eau</p>`,
+      labelSecond: "Rivière Coulonge",
+      titleSecond: "Canot Camping sur la Rivière Coulonge",
       activityDescriptionSecond: `<p className='activity-text'> Durée : 2 jours </p><p className='activity-text'>Difficulté: débutant/facile</p>
-      <p className='activity-text'>Prix: À partir de 50$/jour</p><p className='activity-text'>Inclusions: Canot & Navette jusqu'au point de départ </p>`,
-      labelThird: "4 jours",
-      titleThird: "Aventure de Canot Camping 4 jours",
+      <p className='activity-text'>Prix: À partir de 50$/jour</p><p className='activity-text'>Inclusions: Canot & Navette jusqu'au point de mise à l'eau</p>`,
+      labelThird: "Rivière Dumoine",
+      titleThird: "Canot Camping sur la Rivière Dumoine",
       activityDescriptionthird: `<p className='activity-text'> Durée : 2 jours </p><p className='activity-text'>Difficulté: débutant/facile</p>
-      <p className='activity-text'>Prix: À partir de 50$/jour</p><p className='activity-text'>Inclusions: Canot & Navette jusqu'au point de départ </p>`,
-      labelFourth: "6 jours",
-      titleFourth: "Aventure de Canot Camping 6 jours",
-      activityDescriptionFourth: `<p className='activity-text'> Durée : 2 jours </p><p className='activity-text'>Difficulté: débutant/facile</p>
-      <p className='activity-text'>Prix: À partir de 50$/jour</p><p className='activity-text'>Inclusions: Canot & Navette jusqu'au point de départ </p>`,
+      <p className='activity-text'>Prix: À partir de 50$/jour</p><p className='activity-text'>Inclusions: Canot & Navette jusqu'au point de mise à l'eau</p>`,
       reserve: "Réserver"
      }
   }
@@ -119,7 +111,6 @@ export default function ScrollableTabsButtonAuto(props) {
           <Tab label={content.labelFirst} {...a11yProps(0)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
           <Tab label={content.labelSecond}{...a11yProps(1)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
           <Tab label={content.labelThird}{...a11yProps(2)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
-          <Tab label={content.labelFourth} {...a11yProps(3)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -148,16 +139,6 @@ export default function ScrollableTabsButtonAuto(props) {
           <img className="activity-img" src="/images/map.png" alt="" />
           <div className="activity-text-container">
             {parse(content.activityDescriptionthird)}
-              </div>
-            <button className="button reserve">{content.reserve}</button>
-          </div>
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-      <h2 className="activity-summary">{content.titleFourth}</h2>
-        <div className="activity-container">
-          <img className="activity-img" src="/images/map.png" alt="" />
-          <div className="activity-text-container">
-            {parse(content.activityDescriptionFourth)}
               </div>
             <button className="button reserve">{content.reserve}</button>
           </div>

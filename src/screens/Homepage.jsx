@@ -2,6 +2,7 @@ import '../App.scss';
 import { useRef } from 'react';
 import { Link } from "react-router-dom";
 import ArrowDown from '../components/ArrowDown';
+import ReactAudioPlayer from 'react-audio-player';
 
 
 export default function Homepage(props) {
@@ -13,17 +14,17 @@ export default function Homepage(props) {
 
   let content = {
     English: {
-      seoTitle: "River Tubing",
+      seoTitle: "Wild River Adventure | Pontiac, Outaouais",
       description: "inflated tubes location to do river floating in Outaouais",
-      name: "Wilderness river adventure",
-      summary: "Canoe Camping Adventures agency of Outaouais",
+      name: "Wild river adventure",
+      summary: "Canoe Camping in Outaouais",
       button: "Book Online for 2021 season"
     },
     French: {
-      seoTitle: "Descente de rivière sur tube",
+      seoTitle: "Aventure Rivière Sauvage",
       description: "Location de tubes gonflables pour faire une descente de rivière",
       name: "Aventure rivière sauvage",
-      summary: "Agence d'aventures de canot camping de l'Outaouais",
+      summary: "canot camping dans l'Outaouais",
       button: "Réserver en ligne pour la saison 2021"
     }
   }
@@ -32,6 +33,11 @@ export default function Homepage(props) {
 
 return (
     <div id="homepage">
+      <ReactAudioPlayer
+        src='forest-sounds.mp3'
+        // autoPlay
+        loop
+      />
       <main>
         <section className="hero-section centered">
           <video id="background-video" autoPlay loop muted type="video/mp4">

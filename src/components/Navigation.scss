@@ -1,13 +1,13 @@
 @import '../assets/variables';
 
 .navigation-bar {
-  // background-color: transparent;
+  background-color: transparent;
   align-items: center;
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: 15rem;
-  position: relative;
+  position: absolute;
   .logo {
     height: 6rem;
     margin: 2rem 7rem;
@@ -17,7 +17,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    min-width: 100%;
   }
   .list-action {
     align-items: center;
@@ -39,6 +39,14 @@
         border: 1px white solid;
         opacity: 0.7;
       }
+    }
+    select {
+      background: transparent;
+      color: white;
+      height: 2rem;
+      font-size: 1.5rem;
+      font-family: $font-title;
+      text-transform: uppercase;
     }
   }
   #nav-small-screen {

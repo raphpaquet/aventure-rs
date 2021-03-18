@@ -192,8 +192,11 @@ export default function MapContainer (props) {
 
 
   const defaultCenter = {
-    lat: 46.141513, lng: -76.975921
+    lat: 45.983288,
+    lng: -76.833335
   }
+
+ 
 
 
   
@@ -203,8 +206,8 @@ export default function MapContainer (props) {
       googleMapsApiKey={process.env.REACT_APP_API_KEY_GOOGLE_MAP}>
       <GoogleMap
         mapContainerStyle={mapStyles}
-        zoom={14}
-        center={defaultCenter}
+        zoom={12}
+        center={props.position}
         options={{
           styles: mapTheme,
           scrollwheel: true,
@@ -220,10 +223,14 @@ export default function MapContainer (props) {
           }}
         />
         <Marker
-          label='Nous sommes ici'
+          label={props.name}
+          name='Location'
+          position={props.position}
+        />
+        <Marker
+          label="ARS"
           name='Company Location'
           position={defaultCenter}
-          
         />
       </GoogleMap>
     </LoadScript>

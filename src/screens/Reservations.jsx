@@ -5,12 +5,14 @@ export default function Reservations(props) {
 
   let content = {
     English: {
-      seoTitle: "River Tubing",
-      description: "inflated tubes location to do river floating in Outaouais"
+      seoTitle: "Online booking for canoe & inflated tube location | Pontiac, Outaouais.",
+      description: "Book for your next canoe camping trip, shuttle service or inflated tubes rental",
+      title: "Online Booking"
     },
     French: {
-      seoTitle: "Descente de rivière sur tube",
-      description: "Location de tubes gonflables pour faire une descente de rivière"
+      seoTitle: "Réservation en ligne pour location de canot et de tubes | Pontiac, Outaouais",
+      description: "Réserver pour votre prochain voyage de canot camping, service de navette ou location de tubes gonflables",
+      title: "Réservation en ligne"
     }
   }
  
@@ -23,7 +25,7 @@ export default function Reservations(props) {
           <meta name="description" content={content.description}></meta>
           <title>{content.seoTitle}</title>
         </Helmet>
-      <h2 className="title">Réservations</h2>
+      <h2 className="title">{content.title}</h2>
     </div>
   )
 }

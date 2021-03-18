@@ -303,6 +303,7 @@ p {
     width: 35%;
   }
   .row {
+    flex-direction: column;
     .col {
       width: auto;
     }
@@ -327,6 +328,9 @@ p {
 }
 
 @media screen and (max-width: 479px) {
+  .container {
+    padding: 2rem 1rem;
+  }
   h2 {
     font-size: 2rem;
     letter-spacing: 0.1rem;

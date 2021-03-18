@@ -17,8 +17,8 @@ export default function Canoe(props) {
 
  let content = {
   English: {
-    seoTitle: "Shuttle service for canoe transportation ",
-    description: "explication page for shuttle service reservation for canoe and canoe camping adventures",
+    seoTitle: "Shuttle service for canoe transportation | Pontiac, Outaouais",
+    description: "Plan your next canoe camping trip and book a shuttle service to bring your equipment to your departure point",
     title: "Shuttle service",
     subtitle: "Calm and peacful tubing river descent on 3km",
     activityDescription: `<p className='activity-text'>Location: from the reception to the destination of your choice</p><p className='activity-text'>Schedule: </p>
@@ -27,8 +27,8 @@ export default function Canoe(props) {
    
    },
   French: {
-    seoTitle: "Service de navette pour transport de canot",
-    description: "page explicative pour réservation de navette pour aventures de canot et canot camping Outaouais",
+    seoTitle: "Service de navette pour transport de canot | Pontiac, Outaouais",
+    description: "Planifier votre prochain voyage de canot camping et réservez notre service de navette pour transporter votre équiement à votre point de départ",
     title: "Service de Navette",
     subtitle: "Service de navette avec canot",
     activityDescription: `<p className='activity-text'>Emplacement: départ de la réception vers la destination de votre choix</p><p className='activity-text'> Horaire: </p>

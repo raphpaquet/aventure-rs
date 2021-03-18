@@ -12,13 +12,15 @@ import Tube from './screens/Tube';
 import Navette from './screens/Navette';
 import Security from './screens/Security';
 import Politics from './screens/Politics';
-import RiviereMauve from './screens/RiviereMauve';
 import RiviereNoire from './screens/RiviereNoire';
-import RiviereOrange from './screens/RiviereOrange';
 import Activity from './components/Activity';
 import Rivieres from './components/Rivieres';
 import Navigation from './components/Navigation';
 import Homepage from './screens/Homepage';
+import NavigationBG from './components/NavgationBG';
+import RiviereCoulonge from './screens/RiviereCoulonge';
+import RiviereDumoine from './screens/RiviereDumoine';
+import Gallery from './screens/Gallery';
 
 
 const history = createBrowserHistory();
@@ -38,15 +40,15 @@ function App(props) {
 
   let content = {
     English: {
-      seoTitle: "River Tubing",
-      description: "inflated tubes location to do river floating in Outaouais",
+      seoTitle: "Canoe Camping Québec - Wilderness River Adventure",
+      description: "Plan your next canoe camping trip in the beautiful region of Outaouais. Rent canoe and inflated tubes and have fun on the rivers",
       name: "Wilderness river adventure",
       summary: "Canoe Camping Adventures agency of Outaouais",
       button: "Book for 2021 season"
     },
     French: {
-      seoTitle: "Descente de rivière sur tube",
-      description: "Location de tubes gonflables pour faire une descente de rivière",
+      seoTitle: "Canot Camping Québec - Aventure Rivière Sauvage",
+      description: "Planifier votre prochaine aventure de canot camping dans la belle région de l'Outaouais. Location de canot et tubes.",
       name: "Aventure rivière sauvage",
       summary: "Agence d'aventures de canot camping de l'Outaouais",
       button: "Réserver pour la saison 2021"
@@ -67,25 +69,24 @@ function App(props) {
           <meta name="description" content={content.description}></meta>
           <title>{content.seoTitle}</title>
         </Helmet>
-          <nav className="navbarApp" >
-            <Navigation className="nav-big-screen"
-              language={language}
-              handleSetLanguage={language => {
-                setLanguage(language);
-                storeLanguageInLocalStorage(language)
-              }}
-              ref={activitySectionRef}
-              />
-          </nav>
+              <nav className="navbarApp" >
+                <NavigationBG className="nav-big-screen"
+                  language={language}
+                  handleSetLanguage={language => {
+                    setLanguage(language);
+                    storeLanguageInLocalStorage(language)
+                  }}
+                  ref={activitySectionRef}
+                  />
+              </nav>
               <Switch>
             <Route path="/" exact>
-              <nav className="navbarApp" style={{background: "transparent"}}></nav>
               <Homepage language={language}/>
               <div ref={activitySectionRef} >
               <Activity language={language}
               />
               </div>
-              {/* <Rivieres language={language}/> */}
+              <Rivieres language={language}/>
             </Route>
             <Route path="/canoe">
               <Canoe language={language}/> 
@@ -97,21 +98,29 @@ function App(props) {
                 <Navette language={language}/>
             </Route>
             <Route path="/about">
-            <nav className="navbarApp" style={{background: "black"}}></nav>
               <About language={language} />
             </Route>
             <Route path="/rivierenoire">
                 <RiviereNoire language={language} />
             </Route>
-            <Route path="/rivieremauve">
-                <RiviereMauve language={language} />
+            <Route path="/rivierecoulonge">
+                <RiviereCoulonge language={language} />
             </Route>
-            <Route path="/riviereorange">
-                <RiviereOrange language={language} />
+            <Route path="/rivieredumoine">
+                <RiviereDumoine language={language} />
             </Route>
-            <Route path="/reservations" component={Reservations} language={language}/> 
-            <Route path="/contact" component={Contact} language={language}/>
-            <Route path="/securite" component={Security} language={language}/>
+            <Route path="/reservations">
+                <Reservations language={language}/>
+            </Route> 
+            <Route path="/contact">
+              <Contact language={language}/>
+            </Route>
+            <Route path="/securite" >
+                <Security language={language}/>
+            </Route>
+            <Route path="/gallery" >
+                <Gallery language={language}/>
+            </Route>
             <Route path="/politique" component={Politics} language={language} />
           </Switch>
         <Footer />

@@ -12,13 +12,6 @@ export default function Navigation(props) {
 
     // Burger menu open/close
     const [open, setOpen] = useState(false);
-    const [navPosition, setNavPosition] = useState('relative')
-    const [bgColor, setBgColor] = useState('transparent');
-    
-    const changeState = (color, pos) => {
-      setBgColor(color);
-      setNavPosition(pos)
-    }
 
     let content = {
       English: {
@@ -26,7 +19,7 @@ export default function Navigation(props) {
         firstActivity: "Canoe",
         secondActivity: "Tubing",
         thirdActivity: "Shuttle",
-        titleRiver: "The Rivers",
+        titleRiver: "Rivers",
         firstRiver: "Black River",
         secondRiver: "Purple River",
         thirdRiver: "Orange River",
@@ -55,14 +48,13 @@ export default function Navigation(props) {
 
   return (
 
-    <div className="navigation-bar" style={{ background: bgColor, position: navPosition}}>
+    <div className="navigation-bar">
     <div className="nav-big-screen">
       <div className="logo-container">
-        <Link to="/" onClick={() => changeState('transparent', 'relative')}><img className="logo" src="/images/logo.png" alt="ARS logo" /></Link>
+        <Link to="/"><img className="logo" src="/images/logo.png" alt="ARS logo" /></Link>
       </div>
         <ul className="list-action">
           <DropDownMenu 
-            onClick={() => changeState('transparent', 'absolute')}
             title={content.titleActivity}
             first={content.firstActivity} 
             firstLink={'/canoe'} 
@@ -72,26 +64,24 @@ export default function Navigation(props) {
             thirdLink={"/navette"}
           />
             <DropDownMenu 
-              onClick={() => changeState('black','relative')}
               bgColor={'black'}
               title={content.titleRiver} 
               first={content.firstRiver} 
               firstLink={'/rivierenoire'} 
               second={content.secondRiver} 
-              secondLink={"/rivieremauve"}
+              secondLink={"/rivierecoulonge"}
               third={content.thirdRiver}
-              thirdLink={"/riviereorange"}
+              thirdLink={"/rivieredumoine"}
             />
           <DropDownMenu 
-            onClick={() => changeState('black', 'relative')}
             title={content.titleAbout} 
             first={content.firstAbout} 
             firstLink={'/about'} 
             second={content.secondAbout} 
             secondLink={"/securite"}
           />
-          <Link to="/reservations"><li className="action-li" onClick={() => changeState('black', 'relative')}>{content.booking}</li></Link>
-          <Link to="/contact"  onClick={() => changeState('black', 'relative')} ><li className="action-li">Contact</li></Link>
+          <Link to="/reservations"><li className="action-li">{content.booking}</li></Link>
+          <Link to="/contact" ><li className="action-li">Contact</li></Link>
           <div className="language-select">
               <select 
                 className="custom-select"

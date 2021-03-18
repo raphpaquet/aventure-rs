@@ -19,7 +19,7 @@ export default function Tube(props) {
  let content = {
    English: {
      seoTitle: "River Tubing",
-     description: "inflated tubes location to do river floating in Outaouais",
+     description: "Come enjoy the lovely flow of the rivers and float your way down on our renting tubes.",
      title: "River tubing",
      subtitle: "Calm and peacful tubing river descent on 3km",
      activityDescription: `<p className='activity-text'> Length : approx 3 hours </p><p className='activity-text'>Difficulty: easy/beginner</p>
@@ -29,7 +29,7 @@ export default function Tube(props) {
     },
    French: {
      seoTitle: "Descente de rivière sur tube",
-     description: "Location de tubes gonflables pour faire une descente de rivière",
+     description: "Venez profiter de l'agréable courant des rivières et descendez en flottant sur nos tubes de location.",
      title: "Descente de rivière sur tube",
      subtitle: "Descente de rivière de plaisance de 3km sur la Rivière Noire",
      activityDescription: `<p className='activity-text'> Durée : environ 3 heures </p><p className='activity-text'>Difficulté: facile/débutant</p>
