@@ -1,8 +1,11 @@
 import './Navbar.scss';
 import { CSSTransition } from 'react-transition-group';
 import { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 
-export default function DropDownMenu2() {
+
+export default function DropDownMenu2(props) {
 
 
   const [activeMenu, setActiveMenu] = useState('main');
@@ -17,6 +20,39 @@ export default function DropDownMenu2() {
     const height = el.offsetHeight;
     setMenuHeight(height);
   }
+
+  let content = {
+    English: {
+      activity: "Activities",
+      about: "About",
+      rivers: "Rivers",
+      canoe: "Canoe",
+      tube: "Tube",
+      bus: "Shuttle",
+      noire: "River Noire",
+      coulonge: "River Coulonge",
+      company: "The Company",
+      security: "Security",
+      booking: "Booking",
+      back : "Back"
+    },
+    French: {
+      activity: "Activités",
+      about: "À propos",
+      rivers: "Rivières",
+      canoe: "Canot",
+      tube: "Tube",
+      bus: "Navette",
+      noire: "Rivère Noire",
+      coulonge: "Rivère Coulonge",
+      company: "L'entreprise",
+      security: "Securité",
+      booking: "Réservation",
+      back: "retour"
+    }
+  }
+ 
+  props.language === "English" ? (content = content.English) : (content = content.French);
 
 
   function DropdownItem(props) {
@@ -40,25 +76,20 @@ export default function DropDownMenu2() {
         <div className="menu">
           <DropdownItem
             goToMenu="activities"
-          >Activities</DropdownItem>
+          >{content.activity}</DropdownItem>
           <DropdownItem
-            leftIcon="😀"
-            rightIcon="🙂"
             goToMenu="about">
-            About
+            {content.about}
           </DropdownItem>
           <DropdownItem
-            leftIcon="🚣" 
             goToMenu="rivers">
-            Rivers
+           {content.rivers}
           </DropdownItem>
-          <DropdownItem
-            leftIcon="📆">
-            Booking
+          <DropdownItem>
+            <Link to="/reservation">{content.booking}</Link>
           </DropdownItem>
-          <DropdownItem
-            leftIcon="☎️">
-            Contact
+          <DropdownItem>
+            <Link to="/contact">Contact</Link>
           </DropdownItem>
 
         </div>
@@ -71,12 +102,12 @@ export default function DropDownMenu2() {
         unmountOnExit
         onEnter={calcHeight}>
         <div className="menu">
-          <DropdownItem goToMenu="main" leftIcon="◀️">
-            <h2>Back</h2>
+          <DropdownItem goToMenu="main">
+            <ArrowLeftIcon className="arrow-down" /><h2>{content.back}</h2>
           </DropdownItem>
-          <DropdownItem leftIcon="🚣" >Canoe</DropdownItem>
-          <DropdownItem leftIcon="🐳">Tube</DropdownItem>
-          <DropdownItem leftIcon="🚌">Shuttle</DropdownItem>
+          <DropdownItem>{content.canoe}</DropdownItem>
+          <DropdownItem>{content.tube}</DropdownItem>
+          <DropdownItem>{content.bus}</DropdownItem>
         </div>
       </CSSTransition>
 
@@ -87,11 +118,11 @@ export default function DropDownMenu2() {
         unmountOnExit
         onEnter={calcHeight}>
         <div className="menu">
-          <DropdownItem goToMenu="main" leftIcon="◀️">
-            <h2>Back</h2>
+          <DropdownItem goToMenu="main">
+          <ArrowLeftIcon className="arrow-down" /><h2>{content.back}</h2>
           </DropdownItem>
-          <DropdownItem leftIcon="😈">The company</DropdownItem>
-          <DropdownItem leftIcon="😈">Security</DropdownItem>
+          <DropdownItem>{content.company}</DropdownItem>
+          <DropdownItem>{content.security}</DropdownItem>
         </div>
       </CSSTransition>
 
@@ -102,11 +133,11 @@ export default function DropDownMenu2() {
         unmountOnExit
         onEnter={calcHeight}>
         <div className="menu">
-          <DropdownItem goToMenu="main" leftIcon="◀️">
-            <h2>Back</h2>
+          <DropdownItem goToMenu="main">
+          <ArrowLeftIcon className="arrow-down" /><h2>{content.back}</h2>
           </DropdownItem>
-          <DropdownItem leftIcon="😈">River Noire</DropdownItem>
-          <DropdownItem leftIcon="😈">River Coulonge</DropdownItem>
+          <DropdownItem>{content.noire}</DropdownItem>
+          <DropdownItem>{content.coulonge}</DropdownItem>
         </div>
       </CSSTransition>
     </div>

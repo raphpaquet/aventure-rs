@@ -1,11 +1,14 @@
-$bg:  #242526;
-$bg-accent: #484a4d;
+@import '../assets/variables';
+
+$bg:  #020202;
+$bg-accent: #072500;
 $text-color: #dadce1;
-$nav-size: 60px;
+$nav-size: 15rem;
 $border: 1px solid #474a4d;
 $border-radius: 8px;
 $speed: 500ms; 
 $button-size: calc(#{$nav-size} * 0.5);
+
 /* <nav> */
 .navbar {
   height: $nav-size;
@@ -30,11 +33,6 @@ $button-size: calc(#{$nav-size} * 0.5);
 }
 
 .icon-button {
-  size: calc(#{$nav-size} * 0.5);
-  width: $button-size;
-  height: $button-size;
-  background-color: #484a4d;
-  border-radius: 50%;
   padding: 5px;
   margin: 2px;
   display: flex;
@@ -45,10 +43,10 @@ $button-size: calc(#{$nav-size} * 0.5);
     filter: brightness(1.2);
   }
 }
-.icon-button svg { 
-  fill: ($text-color);
-  width: 20px;
-  height: 20px;
+
+.arrow-down {
+  transform: scale(2);
+  margin-bottom: 1rem;
 }
 
 
@@ -56,9 +54,10 @@ $button-size: calc(#{$nav-size} * 0.5);
 
 .dropdown {
   position: absolute;
-  top: 58px;
+  font-family: $font-title;
+  text-transform: uppercase;
+  top: 130px;
   width: 300px;
-  // transform: translateX(-45%);
   background-color: $bg;
   border: $border;
   border-radius: $border-radius;
@@ -69,6 +68,9 @@ $button-size: calc(#{$nav-size} * 0.5);
 
 .menu {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .menu-item-2 {
@@ -90,6 +92,9 @@ $button-size: calc(#{$nav-size} * 0.5);
   &:hover {
     background-color: #525357;
   }
+}
+.burger {
+  color: darkgoldenrod;
 }
 
 /* CSSTransition classes  */
@@ -126,3 +131,20 @@ $button-size: calc(#{$nav-size} * 0.5);
 }
 
 
+@media screen and (max-width: 991px) {
+  
+}
+
+@media screen and (max-width: 767px) {
+
+}
+
+@media screen and (max-width: 479px) {
+  .dropdown {
+    width: 94vw;
+  }
+  .icon-button {
+    color: "white";
+    transform: scale(2);
+  }
+}

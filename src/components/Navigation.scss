@@ -52,7 +52,9 @@
   #nav-small-screen {
     position: absolute;
     visibility: hidden;
-    display: contents;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     z-index: 1;
     height: 15rem;
     .logo-small-screen {
@@ -87,7 +89,6 @@
     #nav-small-screen {
       position: initial;
       visibility: visible;
-      background-color: green;
       width: 100%;
       .logo-small-screen {
         position: relative;
@@ -102,7 +103,9 @@
 }
 
 @media screen and (max-width: 767px) {
-
+  #nav-small-screen {
+    visibility: visible;;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -110,7 +113,6 @@
 
     #nav-small-screen {
       visibility: visible;
-      background-color: green;
     }
     .nav-big-screen {
       visibility: hidden;

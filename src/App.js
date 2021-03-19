@@ -15,15 +15,11 @@ import Politics from './screens/Politics';
 import RiviereNoire from './screens/RiviereNoire';
 import Activity from './components/Activity';
 import Rivieres from './components/Rivieres';
-import Navigation from './components/Navigation';
 import Homepage from './screens/Homepage';
 import NavigationBG from './components/NavgationBG';
 import RiviereCoulonge from './screens/RiviereCoulonge';
 import RiviereDumoine from './screens/RiviereDumoine';
 import Gallery from './screens/Gallery';
-import Navbar from './components/Navbar';
-import NavItem from './components/NavItem';
-import DropDownMenu2 from './components/DropDownMenu2';
 
 
 const history = createBrowserHistory();
@@ -72,7 +68,7 @@ function App(props) {
           <meta name="description" content={content.description}></meta>
           <title>{content.seoTitle}</title>
         </Helmet>
-              {/* <nav className="navbarApp" >
+              <nav className="navbarApp" >
                 <NavigationBG className="nav-big-screen"
                   language={language}
                   handleSetLanguage={language => {
@@ -81,20 +77,9 @@ function App(props) {
                   }}
                   ref={activitySectionRef}
                   />
-              </nav>  */}
+              </nav> 
               <Switch>
             <Route path="/" exact>
-              <Navbar
-              language={language}
-              handleSetLanguage={language => {
-                setLanguage(language);
-                storeLanguageInLocalStorage(language)
-              }}
-              ref={activitySectionRef}
-              >
-                {/* <NavItem icon="⬇️">
-                </NavItem> */}
-              </Navbar>
               <Homepage language={language}/>
               <div ref={activitySectionRef} >
               <Activity language={language}

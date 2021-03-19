@@ -1,10 +1,10 @@
 import './Navigation.scss';
 import '../App.scss';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import DropDownMenu from './DropDownMenu';
-import Burger from '../components/Burger';
-import Menu from '../components/Menu';
+import DropdownMenu3 from '../components/DropdownMenu3';
+import DropDownMenu2 from './DropDownMenu2';
+import MenuIcon from '@material-ui/icons/Menu';
 
 
 
@@ -12,39 +12,47 @@ export default function Navigation(props) {
 
     // Burger menu open/close
     const [open, setOpen] = useState(false);
+    const [menu, setMenu] = useState("");
+
+    const node = useRef();
+
+    const handleClick = e => {
+      if (node.current.contains(e.target)) {
+        // inside click
+        return;
+      }
+      // outside click
+      setOpen(false);
+    };
+
+    useEffect(() => {
+      document.addEventListener("mouseleave", handleClick);
+
+      return () => {
+        document.removeEventListener("mouseleave", handleClick);
+      };
+    }, []);
 
   
+    const openMenu = (menuName) => {
+      setOpen(!open);
+      setMenu(menuName)
+    }
 
     let content = {
       English: {
-        titleActivity: "Activities",
-        firstActivity: "Canoe",
-        secondActivity: "Tubing",
-        thirdActivity: "Shuttle",
-        titleRiver: "The Rivers",
-        firstRiver: "Noire River",
-        secondRiver: "Coulonge River",
-        thirdRiver: "Dumoine River",
-        firstAbout: "The Company",
-        titleAbout: "About",
-        secondAbout: "Security",
-        gallery: "Gallery",
-        booking: "Booking"
+        activity: "Activities",
+        river: "Rivers",
+        about: "About",
+        booking: 'Booking',
+        gallery: "Gallery"
       },
       French: {
-        titleActivity: "Les activités",
-        firstActivity: "Canot",
-        secondActivity: "Tube",
-        thirdActivity: "Navette",
-        titleRiver: "Les Rivières",
-        firstRiver: "Rivière Noire",
-        secondRiver: "Rivière Coulonge",
-        thirdRiver: "Rivière Dumoine",
-        firstAbout: "L'entreprise",
-        titleAbout: "À propos",
-        secondAbout: "Sécurité",
-        gallery: "Galerie",
-        booking: "Réservations"
+        activity: "Activités",
+        river: "Rivières",
+        about: "À propos",
+        booking: 'Réservation',
+        gallery: "Galerie"
       }
     }
    
@@ -57,33 +65,17 @@ export default function Navigation(props) {
       <div className="logo-container">
         <Link to="/"><img className="logo" src="/images/logo.png" alt="ARS logo" /></Link>
       </div>
-        <ul className="list-action">
-          <DropDownMenu 
-            title={content.titleActivity}
-            first={content.firstActivity} 
-            firstLink={'/canoe'} 
-            second={content.secondActivity} 
-            secondLink={"/tube"} 
-            third={content.thirdActivity} 
-            thirdLink={"/navette"}
-          />
-            <DropDownMenu 
-              bgColor={'black'}
-              title={content.titleRiver} 
-              first={content.firstRiver} 
-              firstLink={'/rivierenoire'} 
-              second={content.secondRiver} 
-              secondLink={"/rivierecoulonge"}
-              third={content.thirdRiver}
-              thirdLink={"/rivieredumoine"}
-            />
-          <DropDownMenu 
-            title={content.titleAbout} 
-            first={content.firstAbout} 
-            firstLink={'/about'} 
-            second={content.secondAbout} 
-            secondLink={"/securite"}
-          />
+        <ul className="list-action" ref={node}>
+          <li className="nav-item-large">
+            <div className="action-li" onClick={() => openMenu('activities')}>{content.activity}</div>
+          </li>
+          <li className="nav-item-large">
+            <div className="action-li" onClick={() => openMenu('rivers')}>{content.river}</div>
+          </li>
+          <li className="nav-item-large">
+            <div className="action-li" onClick={() => openMenu('about')}>{content.about}</div>
+          </li>
+          {open && <DropdownMenu3 language={props.language} goToMenu={menu}/>}
           <Link to="/reservations"><li className="action-li" >{content.booking}</li></Link>
           <Link to="/gallery"><li className="action-li" >{content.gallery}</li></Link>
           <Link to="/contact"><li className="action-li">Contact</li></Link>
@@ -92,18 +84,18 @@ export default function Navigation(props) {
                 className="custom-select"
                 value={props.language}
                 onChange={e => props.handleSetLanguage(e.target.value)}>
-                  <option value="English">English</option>
-                  <option value="French">Français</option>
+                  <option value="English">En</option>
+                  <option value="French">Fr</option>
                 </select>
             </div>
         </ul>
       </div>
       <div id="nav-small-screen">
-      <div className="logo-container">
-        <Link to="/"><img className="logo" src="/images/logo.png" alt="ARS logo" /></Link>
-      </div>
-        <Burger open={open} setOpen={setOpen}/>
-        <Menu open={open} setOpen={setOpen}  ref={props.ref}/>
+      <Link to="/"><img className="logo-small-screen" src="/images/logo.png" alt="ARS logo" /></Link>
+        <li className="nav-item">
+        <div className="icon-button burger" onClick={() => setOpen(!open)}><MenuIcon /></div>
+        </li>
+        {open && <DropDownMenu2 />}
       </div>
     </div>
   )
