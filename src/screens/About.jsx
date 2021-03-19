@@ -28,7 +28,6 @@ export default function About(props) {
     }
   }
 
-  console.log(props.language)
  
   props.language === "English" ? (content = content.English) : (content = content.French);
 

@@ -3,22 +3,45 @@ import { Link } from 'react-router-dom';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 
-export default function Footer() {
+export default function Footer(props) {
+
+  let content = {
+    English: {
+      adress: "Where to find us",
+      links: "Practical links",
+      link1: "Terms & Conditions",
+      link2: "Sales policies",
+      link3: "Security & responsabilities",
+      link4: "River Maps",
+    },
+    French: {
+      adress: "Où nous trouver",
+      links: "Liens pratiques",
+      link1: "Termes et conditions",
+      link2: "Politique d'achats",
+      link3: "Sécurité et responsabilités",
+      link4: "Cartes des rivières",
+    }
+  }
+
+  console.log(props.language)
+ 
+  props.language === "English" ? (content = content.English) : (content = content.French);
 
   return (
   <footer className="footer">
     <div className="container">
       <div className="row">
         <div className="col col-3">
-          <h5>Où nous trouver</h5>
+          <h5>{content.adress}</h5>
           <p>112 Avenue des Sources, Pontiac, Quebec, H7F2H6, Canada</p>
         </div>
         <div className="col col-3">
-          <h5>Liens pratiques</h5>
-          <Link to="" className="footer-link">Termes et conditions</Link>
-          <Link to="" className="footer-link">Politique d'achats</Link>
-          <Link to="" className="footer-link">Sécurité et responsabilités</Link>
-          <Link to="" className="footer-link">Cartes des rivières</Link>
+          <h5>{content.links}</h5>
+          <Link to="" className="footer-link">{content.link1}</Link>
+          <Link to="" className="footer-link">{content.link2}</Link>
+          <Link to="" className="footer-link">{content.link3}</Link>
+          <Link to="" className="footer-link">{content.link4}</Link>
         </div>
         <div className="col col-3">
           <h5>Social</h5>
