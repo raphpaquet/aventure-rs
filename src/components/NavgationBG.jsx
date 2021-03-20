@@ -2,8 +2,8 @@ import './Navigation.scss';
 import '../App.scss';
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import DropdownMenu3 from '../components/DropdownMenu3';
-import DropDownMenu2 from './DropDownMenu2';
+import DropDownMenuLrgScreen from '../components/DropdownMenuLrgScreen';
+import DropDownMenuSmScreen from './DropDownMenuSmScreen';
 import MenuIcon from '@material-ui/icons/Menu';
 
 
@@ -16,7 +16,8 @@ export default function Navigation(props) {
 
     const node = useRef();
 
-    const handleClick = e => {
+    const handleClickOutside = e => {
+      console.log("clicking anywhere");
       if (node.current.contains(e.target)) {
         // inside click
         return;
@@ -24,20 +25,37 @@ export default function Navigation(props) {
       // outside click
       setOpen(false);
     };
-
+  
     useEffect(() => {
-      document.addEventListener("mouseleave", handleClick);
-
+      if (open) {
+        document.addEventListener("mousedown", handleClickOutside);
+      } else {
+        document.removeEventListener("mousedown", handleClickOutside);
+      }
+  
       return () => {
-        document.removeEventListener("mouseleave", handleClick);
+        document.removeEventListener("mousedown", handleClickOutside);
       };
-    }, []);
-
+    }, [open]);
   
     const openMenu = (menuName) => {
       setOpen(!open);
       setMenu(menuName)
     }
+
+    const closeMenu = () => {
+      setOpen(false)
+    }
+
+    let languageStoredInLocalStorage = localStorage.getItem("language");
+    let [language, setLanguage] = useState(
+      languageStoredInLocalStorage ? languageStoredInLocalStorage : "English"
+    );
+
+    function storeLanguageInLocalStorage(language) {
+      localStorage.setItem("language", language);
+      }
+
 
     let content = {
       English: {
@@ -60,12 +78,12 @@ export default function Navigation(props) {
 
   return (
 
-    <div className="navigation-bar" style={{backgroundColor:"black", position:"relative"}}>
-    <div className="nav-big-screen">
+    <div ref={node}  className="navigation-bar" style={{backgroundColor:"black", position:"relative"}} >
+    <div className="nav-big-screen" >
       <div className="logo-container">
         <Link to="/"><img className="logo" src="/images/logo.png" alt="ARS logo" /></Link>
       </div>
-        <ul className="list-action" ref={node}>
+        <ul className="list-action" >
           <li className="nav-item-large">
             <div className="action-li" onClick={() => openMenu('activities')}>{content.activity}</div>
           </li>
@@ -75,10 +93,10 @@ export default function Navigation(props) {
           <li className="nav-item-large">
             <div className="action-li" onClick={() => openMenu('about')}>{content.about}</div>
           </li>
-          {open && <DropdownMenu3 language={props.language} goToMenu={menu}/>}
-          <Link to="/reservations"><li className="action-li" >{content.booking}</li></Link>
-          <Link to="/gallery"><li className="action-li" >{content.gallery}</li></Link>
-          <Link to="/contact"><li className="action-li">Contact</li></Link>
+          {open && <DropDownMenuLrgScreen language={props.language} goToMenu={menu} close={() => closeMenu()}/>}
+          <Link to="/reservations"><li className="action-li" onClick={() => closeMenu()}>{content.booking}</li></Link>
+          <Link to="/gallery"><li className="action-li" onClick={() => closeMenu()}>{content.gallery}</li></Link>
+          <Link to="/contact"><li className="action-li" onClick={() => closeMenu()}>Contact</li></Link>
           <div className="language-select">
               <select 
                 className="custom-select"
@@ -91,11 +109,19 @@ export default function Navigation(props) {
         </ul>
       </div>
       <div id="nav-small-screen">
-      <Link to="/"><img className="logo-small-screen" src="/images/logo.png" alt="ARS logo" /></Link>
+        <Link to="/"><img className="logo-small-screen" src="/images/logo.png" alt="ARS logo" /></Link>
         <li className="nav-item">
         <div className="icon-button burger" onClick={() => setOpen(!open)}><MenuIcon /></div>
         </li>
-        {open && <DropDownMenu2 />}
+        {open && 
+        <DropDownMenuSmScreen 
+          language={language}
+          handleSetLanguage={language => {
+            setLanguage(language);
+            storeLanguageInLocalStorage(language)
+          }}
+          goToMenu={menu}  
+          close={() => closeMenu()}/>}
       </div>
     </div>
   )

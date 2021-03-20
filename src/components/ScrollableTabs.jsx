@@ -64,10 +64,6 @@ export default function ScrollableTabsButtonAuto(props) {
       titleSecond: "Canoe Camping on Rivière Coulonge",
       activityDescriptionSecond: `<p className='activity-text'> Length : 2 days </p><p className='activity-text'>Difficulty: beginner/easy</p>
       <p className='activity-text'>Price: starting at 50$</p><p className='activity-text'>Inclusions: Canoe & Shuttle to launching point </p>`,
-      labelThird: "Rivière Dumoine",
-      titleThird: "Canoe Camping on Rivière Dumoine",
-      activityDescriptionthird: `<p className='activity-text'> Length : 2 days </p><p className='activity-text'>Difficulty: beginner/easy</p>
-      <p className='activity-text'>Price: starting at 50$</p><p className='activity-text'>Inclusions: Canoe & Shuttle to launching point </p>`,
       reserve: "Book online"
      },
     French: {
@@ -78,10 +74,6 @@ export default function ScrollableTabsButtonAuto(props) {
       labelSecond: "Rivière Coulonge",
       titleSecond: "Canot Camping sur la Rivière Coulonge",
       activityDescriptionSecond: `<p className='activity-text'> Durée : 2 jours </p><p className='activity-text'>Difficulté: débutant/facile</p>
-      <p className='activity-text'>Prix: À partir de 50$/jour</p><p className='activity-text'>Inclusions: Canot & Navette jusqu'au point de mise à l'eau</p>`,
-      labelThird: "Rivière Dumoine",
-      titleThird: "Canot Camping sur la Rivière Dumoine",
-      activityDescriptionthird: `<p className='activity-text'> Durée : 2 jours </p><p className='activity-text'>Difficulté: débutant/facile</p>
       <p className='activity-text'>Prix: À partir de 50$/jour</p><p className='activity-text'>Inclusions: Canot & Navette jusqu'au point de mise à l'eau</p>`,
       reserve: "Réserver"
      }
@@ -110,7 +102,6 @@ export default function ScrollableTabsButtonAuto(props) {
         >
           <Tab label={content.labelFirst} {...a11yProps(0)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
           <Tab label={content.labelSecond}{...a11yProps(1)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
-          <Tab label={content.labelThird}{...a11yProps(2)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -129,16 +120,6 @@ export default function ScrollableTabsButtonAuto(props) {
           <img className="activity-img" src="/images/map.png" alt="" />
           <div className="activity-text-container">
             {parse(content.activityDescriptionSecond)}
-              </div>
-            <button className="button reserve">{content.reserve}</button>
-          </div>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-      <h2 className="activity-summary">{content.titleThird}</h2>
-        <div className="activity-container">
-          <img className="activity-img" src="/images/map.png" alt="" />
-          <div className="activity-text-container">
-            {parse(content.activityDescriptionthird)}
               </div>
             <button className="button reserve">{content.reserve}</button>
           </div>

@@ -20,8 +20,8 @@ export default function Tube(props) {
    English: {
      seoTitle: "River Tubing",
      description: "Come enjoy the lovely flow of the rivers and float your way down on our renting tubes.",
-     title: "River tubing",
-     subtitle: "Calm and peacful tubing river descent on 3km",
+     title: "River tubing on Rivière Noire",
+     subtitle: "Calm and peacful descent of 7km",
      activityDescription: `<p className='activity-text'> Length : approx 3 hours </p><p className='activity-text'>Difficulty: easy/beginner</p>
      <p className='activity-text'>Price: starting at 20$</p><p className='activity-text'>Inclusions: Tube & Shuttle to departure point </p>`,
      reserve: "Book online"
@@ -30,8 +30,8 @@ export default function Tube(props) {
    French: {
      seoTitle: "Descente de rivière sur tube",
      description: "Venez profiter de l'agréable courant des rivières et descendez en flottant sur nos tubes de location.",
-     title: "Descente de rivière sur tube",
-     subtitle: "Descente de rivière de plaisance de 3km sur la Rivière Noire",
+     title: `Descente de la Rivière <br /><br /> Noire sur tube`,
+     subtitle: "Descente de rivière de plaisance de 7km sur la Rivière Noire",
      activityDescription: `<p className='activity-text'> Durée : environ 3 heures </p><p className='activity-text'>Difficulté: facile/débutant</p>
      <p className='activity-text'>Prix : À partir de 20$</p><p className='activity-text'>Inclusions: Tube & Navette jusqu'au point de départ </p>`,
      reserve: 'Réserver'
@@ -49,7 +49,7 @@ export default function Tube(props) {
         <div className="activity">
         <section className="nav-image-tube">
             <div className="img-text">
-              <h3 className="activity-title" onClick={handleClick}>{content.title}<ArrowDown onClick={handleClick}/></h3>
+              <h3 className="activity-title" onClick={handleClick}>{parse(content.title)}<ArrowDown onClick={handleClick}/></h3>
             </div>
         </section>
           <section className="activity-info" ref={activityRef}>
@@ -58,18 +58,6 @@ export default function Tube(props) {
               <img className="tube-map" src="/images/map.png" alt="carte de riviere"/>
               <div className="activity-text-container">
                 <hr /> {parse(content.activityDescription)}
-                {/* <p className="activity-text">
-                Durée : environ 3h
-                </p>
-                <p className="activity-text">
-                Difficulté: facile/débutant
-                </p>
-                <p className="activity-text">
-                Prix : À partir de 20$
-                </p>
-                <p className="activity-text">
-                Inclusions: Tube & Navette jusqu'au point de départ 
-                </p> */}
               </div>
             </div>
             <button className="button reserve">{content.reserve}</button>

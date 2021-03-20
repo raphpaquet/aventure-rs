@@ -1,7 +1,6 @@
 @import '../assets/variables';
 
 #activity {
-  // position: absolute;
   min-width: 100vw;
   .activity {
       display: flex;
@@ -106,16 +105,11 @@
 
 @media screen and (max-width: 991px) {
   #activity {
-    height: 100vh;
     .activity {
-      .nav-image-canoe {
-        min-height: 100vh;
-      }
       .img-text {
-        margin-top: 100rem;
+        margin-top: 60rem;
         margin-right: 3rem;
         .activity-title {
-          font-size: 4rem;
         }
       }
     }
@@ -124,24 +118,21 @@
 
 @media screen and (max-width: 770px) {
   #activity {
-    height: 100vh;
     max-width: 100vw;
     .activity {
-      .nav-image-canoe {
-        min-height: 100vh;
-      }
       .img-text {
-        margin-top: 80rem;
-        margin-right: 3rem;
-        .activity-title {
-          font-size: 4rem;
-        }
+        margin-top: 60rem;
       }
     }
     .activity-info {
+      position: relative;
       max-width: 100vw;
+      .activity-summary {
+        width: auto !important;
+      }
       .activity-container {
         flex-direction: column;
+        align-items: center;
         .activity-img {
           width: 30rem !important;
           margin-bottom: 2rem;
@@ -158,23 +149,40 @@
 
 @media screen and (max-width: 479px) {
   #activity {
-    height: 100vh;
     max-width: 100vw;
     .activity {
-      .nav-image-canoe {
-        min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .nav-image-canoe{
+        background: url('../assets/canoe.jpg');
+        background-size: cover;
+        height: 90vh;
+        background-position: 50%;
+      }
+      .nav-image-tube {
+        background: url('../assets/tubing.jpg');
+        background-size: cover;
+        height: 90vh;
+        background-position: 40%;
+      }
+      .nav-image-navette {
+        background: url('../assets/bus.png');
+        background-size: cover;
+        height: 90vh;
+        background-position: 30%;
       }
       .img-text {
         margin-top: 50rem;
-        margin-right: 0;
-        margin-left: 2rem;
         .activity-title {
-          font-size: 4rem;
+          font-size: 3rem;
+          margin-right: 1rem;
         }
       }
     }
     .activity-info {
       max-width: 100vw;
+      
       .activity-container {
         flex-direction: column;
         .activity-img {

@@ -1,6 +1,6 @@
 import './Navbar.scss';
 import { useState } from 'react';
-import DropDownMenu2 from './DropDownMenu2'
+import DropDownMenuSmScreen from './DropDownMenuSmScreen'
 
 export default function NavItem(props) {
 
@@ -9,8 +9,8 @@ export default function NavItem(props) {
   return (
     <li className="nav-item">
       <a href="/#" className="icon-button" onClick={() => setOpen(!open)}>contact</a>
-      <div className="icon-button" onClick={() => setOpen(!open)}>Activity<DropDownMenu2></DropDownMenu2></div>
-      <div className="icon-button" onClick={() => setOpen(!open)}>About<DropDownMenu2></DropDownMenu2></div>
+      <div className="icon-button" onClick={() => setOpen(!open)}>Activity<DropDownMenuSmScreen></DropDownMenuSmScreen></div>
+      <div className="icon-button" onClick={() => setOpen(!open)}>About<DropDownMenuSmScreen></DropDownMenuSmScreen></div>
       <a href="/#" className="icon-button" onClick={() => setOpen(!open)}>Reservation</a>
       {open }
     </li>

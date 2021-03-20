@@ -27,8 +27,8 @@
         color: gray;
       }
     }
-    img {
-      width: 50rem;
+    .map-container {
+      width: 60vw;
     }
   }
   .follow {
@@ -87,8 +87,11 @@
     .contact {
       .map {
         flex-direction: column;
-        div {
-          width: 90vw !important;
+        .map-container {
+          width: 90vw;
+            :nth-child(2) {
+              width: 100% !important;
+          }
         }
       }
     }

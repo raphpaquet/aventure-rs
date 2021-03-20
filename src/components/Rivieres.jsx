@@ -8,24 +8,10 @@ export default function Rivieres(props) {
     English: {
       title: "the Rivers",
       subtitle: "Here's the 3 navigable rivers of Pontiac",
-      noire: "Rivière Noire",
-      noireDescription: "",
-      info: "More info",
-      mauve: "Rivière Mauve",
-      mauveDescription: "",
-      orange: "Rivière Orange",
-      orangeDescription: ""
     },
     French: {
       title: "Les Rivières",
       subtitle: "Voici les 3 rivières naviguables de la région.",
-      noire: "Rivière Noire",
-      noireDescription: "",
-      info: "Plus d'info",
-      mauve: "Rivière Mauve",
-      mauveDescription: "",
-      orange: "Rivière Orange",
-      orangeDescription: ""
     }
   }
  

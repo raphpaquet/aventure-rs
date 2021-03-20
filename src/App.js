@@ -18,8 +18,8 @@ import Rivieres from './components/Rivieres';
 import Homepage from './screens/Homepage';
 import NavigationBG from './components/NavgationBG';
 import RiviereCoulonge from './screens/RiviereCoulonge';
-import RiviereDumoine from './screens/RiviereDumoine';
 import Gallery from './screens/Gallery';
+import ReactAudioPlayer from 'react-audio-player';
 
 
 const history = createBrowserHistory();
@@ -80,6 +80,11 @@ function App(props) {
               </nav> 
               <Switch>
             <Route path="/" exact>
+            <ReactAudioPlayer
+                src='forest-sounds.mp3'
+                autoPlay
+                loop
+              />
               <Homepage language={language}/>
               <div ref={activitySectionRef} >
               <Activity language={language}
@@ -104,9 +109,6 @@ function App(props) {
             </Route>
             <Route path="/rivierecoulonge">
                 <RiviereCoulonge language={language} />
-            </Route>
-            <Route path="/rivieredumoine">
-                <RiviereDumoine language={language} />
             </Route>
             <Route path="/reservations">
                 <Reservations language={language}/>

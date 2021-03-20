@@ -20,20 +20,22 @@ export default function Canoe(props) {
     seoTitle: "Shuttle service for canoe transportation | Pontiac, Outaouais",
     description: "Plan your next canoe camping trip and book a shuttle service to bring your equipment to your departure point",
     title: "Shuttle service",
-    subtitle: "Calm and peacful tubing river descent on 3km",
+    subtitle: "Shuttle Service",
     activityDescription: `<p className='activity-text'>Location: from the reception to the destination of your choice</p><p className='activity-text'>Schedule: </p>
     <p className='activity-text'>Price: starting at 20$/person</p><p className='activity-text'>Inclusions:</p>`,
-    reserve: "Book online"
+    reserve: "Book online",
+    contact: "Contact Us!"
    
    },
   French: {
     seoTitle: "Service de navette pour transport de canot | Pontiac, Outaouais",
     description: "Planifier votre prochain voyage de canot camping et réservez notre service de navette pour transporter votre équiement à votre point de départ",
     title: "Service de Navette",
-    subtitle: "Service de navette avec canot",
+    subtitle: "Service de navette",
     activityDescription: `<p className='activity-text'>Emplacement: départ de la réception vers la destination de votre choix</p><p className='activity-text'> Horaire: </p>
     <p className='activity-text'>Prix : À partir de 20$/personne</p><p className='activity-text'>Inclusions: </p>`,
-    reserve: 'Réserver'
+    reserve: 'Réserver',
+    contact: "Contactez-Nous !"
   }
 }
 
@@ -59,7 +61,7 @@ props.language === "English" ? (content = content.English) : (content = content.
                 {parse(content.activityDescription)}
               </div>
             </div>
-            <button className="button reserve">{content.reserve}</button>
+            <a href="/contact" className="button reserve">{content.contact}</a>
           </section>
         </div>
       </div>

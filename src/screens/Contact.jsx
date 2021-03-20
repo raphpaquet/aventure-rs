@@ -21,7 +21,8 @@ export default function Contact(props) {
       address: "Address :",
       call: "Call Us:",
       email: "Email us:",
-      follow: "Follow our adventures !"
+      follow: "Follow our adventures !",
+      direction: "Itinerary"
     },
     French: {
       seoTitle: "Descente de rivière sur tube",
@@ -30,7 +31,8 @@ export default function Contact(props) {
       address: "Adresse :",
       call: "Appelez-nous",
       email: "Écrivez-nous:",
-      follow: "Suivez nos aventures !"
+      follow: "Suivez nos aventures !",
+      direction: "Itinéraire"
     }
   }
  
@@ -48,14 +50,17 @@ export default function Contact(props) {
           <div className="address">
             <h3>{content.address} </h3>
               <p>1111 rue de la Rivière Noire, <br></br>Pontiac, Quebec, H6fD4G</p>
+            <a href="https://www.google.com/maps/dir//45.983288,-76.833335/@45.983288,-76.8355237,17z/data=!4m2!4m1!3e0" className="button" target="_blank">{content.direction}</a>
             <h4>{content.call}</h4>
               <p>514.555.5555</p>
             <h4>{content.email}</h4>
               <p><a href="mailto:paquetraphaelle@example.com">ars@gmail.com</a></p>
           </div>
-          <MapContainer 
-            position={positionARS}
-          />
+          <div className="map-container">
+            <MapContainer 
+              position={positionARS}
+            />
+          </div>
         </div>
         <div className="follow">
           <h2 className="title">{content.follow}</h2>

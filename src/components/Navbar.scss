@@ -45,7 +45,6 @@ $button-size: calc(#{$nav-size} * 0.5);
 }
 
 .arrow-down {
-  transform: scale(2);
   margin-bottom: 1rem;
 }
 
@@ -56,14 +55,15 @@ $button-size: calc(#{$nav-size} * 0.5);
   position: absolute;
   font-family: $font-title;
   text-transform: uppercase;
-  top: 130px;
+  top: 100px;
   width: 300px;
-  background-color: $bg;
-  border: $border;
   border-radius: $border-radius;
   padding: 1rem;
-  overflow: hidden;
+  overflow: hidden;color: black;
   transition: height $speed ease;
+  background: rgb(46, 46, 46);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14);
 }
 
 .menu {
@@ -75,6 +75,7 @@ $button-size: calc(#{$nav-size} * 0.5);
 
 .menu-item-2 {
   height: 50px;
+  color: white;
   display: flex;
   align-items: center;
   border-radius: ($border-radius);
@@ -132,19 +133,36 @@ $button-size: calc(#{$nav-size} * 0.5);
 
 
 @media screen and (max-width: 991px) {
-  
-}
-
-@media screen and (max-width: 767px) {
-
-}
-
-@media screen and (max-width: 479px) {
   .dropdown {
-    width: 94vw;
+    transform: translateX(100%);
+    width: 50vw;
+    padding: 0;
+    float: right;
+    h2 {
+      font-size: 1.5rem;
+    }
   }
   .icon-button {
     color: "white";
     transform: scale(2);
   }
+}
+
+@media screen and (max-width: 767px) {
+  .dropdown {
+    transform: translateX(0);
+    width: 100vw;
+    padding: 0;
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  .icon-button {
+    color: "white";
+    transform: scale(2);
+  }
+}
+
+@media screen and (max-width: 479px) {
+
 }

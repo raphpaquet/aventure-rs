@@ -20,6 +20,16 @@
   .river-image {
     margin: 2rem 0rem;
   }
+  .map-container {
+    width: 60vw;
+  }
+  .carte-container {
+    position: relative;
+  }
+  .carte-container-small-screen {
+    visibility: hidden;
+    position: absolute;
+  }
 
   .wave-container {
     width: 100%;
@@ -28,7 +38,31 @@
     bottom: 0;
     opacity: 0.8;
   }
+  .cards-website {
+    font-size: 1rem;
+    align-self: flex-end;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    font-family: $font-title;
+    a {
+      text-decoration: underline !important;
+    }
+  }
 }
+
+@media screen and (max-width: 991px) {
+  .riviere {
+    .carte-container {
+      visibility: hidden;
+      position: absolute;
+    }
+    .carte-container-small-screen {
+      visibility: visible;
+      position: relative;
+    }
+  }
+}
+
 
 @media screen and (max-width: 770px) {
   .riviere {
@@ -36,7 +70,13 @@
       width: 80%;
     }
     .river-image {
-      width: 50rem;
+      width: 100%;
+    }
+    .map-container {
+      width: 100%;
+        :nth-child(2) {
+          width: 100% !important;
+      }
     }
   }
 }

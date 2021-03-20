@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -68,11 +69,6 @@ export default function ScrollableTabsRiver(props) {
       activityDescriptionSecond: `<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>`,
-      labelThird: "Rivière Dumoine",
-      titleThird: "Rivière Dumoine",
-      activityDescriptionthird: `<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>`,
       reserve: "More Info"
      },
     French: {
@@ -84,11 +80,6 @@ export default function ScrollableTabsRiver(props) {
       labelSecond: "Rivière Coulonge",
       titleSecond: "Rivière Coulonge",
       activityDescriptionSecond: `<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>`,
-      labelThird: "Rivière Dumoine",
-      titleThird: "Rivière Dumoine",
-      activityDescriptionthird: ` <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>`,
       reserve: "Plus d'info"
@@ -118,7 +109,6 @@ export default function ScrollableTabsRiver(props) {
         >
           <Tab label={content.labelFirst} {...a11yProps(0)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
           <Tab label={content.labelSecond}{...a11yProps(1)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
-          <Tab label={content.labelThird}{...a11yProps(2)} style={{fontSize:"1.5rem", fontFamily:"'Open Sans', sans-serif"}}/>
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -128,7 +118,7 @@ export default function ScrollableTabsRiver(props) {
           <div className="riviere-text-container">
             {parse(content.activityDescriptionFirst)}
               </div>
-            <button className="button reserve">{content.reserve}</button>
+            <Link to="/rivierenoire"><button className="button reserve">{content.reserve}</button></Link>
           </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
@@ -138,17 +128,7 @@ export default function ScrollableTabsRiver(props) {
           <div className="riviere-text-container">
             {parse(content.activityDescriptionSecond)}
               </div>
-            <button className="button reserve">{content.reserve}</button>
-          </div>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <div className="riviere-container">
-          <img className="riviere-img" src="/images/river.jpg" alt="" />
-          <h3 className="riviere-summary">{content.titleThird}</h3>
-          <div className="riviere-text-container">
-            {parse(content.activityDescriptionthird)}
-              </div>
-            <button className="button reserve river-btn" style={{marginTop:"2rem"}}>{content.reserve}</button>
+            <Link to="/rivierecoulonge"><button className="button reserve">{content.reserve}</button></Link>
           </div>
       </TabPanel>
     </div>

@@ -34,8 +34,8 @@ export default function Homepage(props) {
 return (
     <div id="homepage">
       <ReactAudioPlayer
-        src='forest-sounds.mp3'
-        // autoPlay
+        src='forest-sounds1.wav'
+        autoPlay
         loop
       />
       <main>
