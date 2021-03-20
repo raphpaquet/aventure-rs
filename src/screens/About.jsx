@@ -37,7 +37,7 @@ export default function About(props) {
           <meta name="description" content={content.description}></meta>
           <title>{content.seoTitle}</title>
         </Helmet>
-        <h2 className="title">{content.title}</h2>
+        <h1 className="title">{content.title}</h1>
         <div className="about-container">
           <div className="about-content">
               <img className="about-img" src="/images/ARS_canoe_fire.jpeg" alt="feu de camp sur la plage avec canot"/>

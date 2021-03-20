@@ -41,7 +41,7 @@ export default function Footer(props) {
           <Link to="" className="footer-link">{content.link1}</Link>
           <Link to="" className="footer-link">{content.link2}</Link>
           <Link to="" className="footer-link">{content.link3}</Link>
-          <Link to="" className="footer-link">{content.link4}</Link>
+          <a href="http://www.cartespleinair.org/Canot/cartes.html" target="_blank" className="footer-link">{content.link4}</a>
         </div>
         <div className="col col-3">
           <h5>Social</h5>
@@ -56,7 +56,7 @@ export default function Footer(props) {
     </div>
     <div className="center">
       <div className="w-container">
-        <div className="footer-text">@ 2021 Raphaëlle Paquet | All Rights Reserved.</div>
+        <div className="footer-text">@ 2021 ARS-Pontiac | All Rights Reserved.</div>
       </div>
     </div>
   </footer>

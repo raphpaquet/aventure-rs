@@ -20,6 +20,7 @@ import NavigationBG from './components/NavgationBG';
 import RiviereCoulonge from './screens/RiviereCoulonge';
 import Gallery from './screens/Gallery';
 import ReactAudioPlayer from 'react-audio-player';
+import ScrollToTop from './components/ScrollToTop';
 
 
 const history = createBrowserHistory();
@@ -78,6 +79,7 @@ function App(props) {
                   ref={activitySectionRef}
                   />
               </nav> 
+            <ScrollToTop />
               <Switch>
             <Route path="/" exact>
             <ReactAudioPlayer

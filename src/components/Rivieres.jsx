@@ -6,11 +6,11 @@ export default function Rivieres(props) {
 
   let content = {
     English: {
-      title: "the Rivers",
+      title: "Our Rivers",
       subtitle: "Here's the 3 navigable rivers of Pontiac",
     },
     French: {
-      title: "Les Rivières",
+      title: "Nos Rivières",
       subtitle: "Voici les 3 rivières naviguables de la région.",
     }
   }

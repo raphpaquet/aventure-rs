@@ -33,11 +33,11 @@ export default function Homepage(props) {
 
 return (
     <div id="homepage">
-      <ReactAudioPlayer
+      {/* <ReactAudioPlayer
         src='forest-sounds1.wav'
         autoPlay
         loop
-      />
+      /> */}
       <main>
         <section className="hero-section centered">
           <video id="background-video" autoPlay loop muted type="video/mp4">

@@ -9,19 +9,10 @@
     top: 0;
     height: 100vh;
   }
-  .title {
-    float: left;
-    margin-left: 10rem;
-    margin-top: 5rem;
-    color: $primary-color;
-    letter-spacing: 0.2em;
-    font-weight: bold;
-  }
   .about-container{
-    // position: relative;
     display: flex;
     flex-flow: wrap;
-    margin: 15rem 10%;
+    margin: 5rem 10%;
     .about-content {
       display: flex;
       margin: 5rem;
