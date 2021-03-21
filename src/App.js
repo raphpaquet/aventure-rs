@@ -66,13 +66,26 @@ function App(props) {
     <Router history={history} language={language}>
       <div className="App">
         <Helmet>
-          <meta name="description" content={content.description}></meta>
+          {/* <meta name="description" content={content.description}></meta>
           <title>{content.seoTitle}</title>
           <link rel="canonical" href="https://aventure-riviere-sauvage.web.app/" />
           <meta name="twitter:card" content="summary" /> 
           <meta name="twitter:description" content="Canot Camping Québec - Aventure Rivière Sauvage" /> 
           <meta name="twitter:title" content="Planifier votre prochaine aventure de canot camping dans la belle région de l'Outaouais. Location de canot et tubes." /> 
+          <meta name="twitter:image" content="/images/canoe.jpg" /> */}
+          <meta charset="utf-8" />
+          <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="theme-color" content="#000000" />
+          <meta name="description" content="Planifier votre prochaine aventure de canot camping dans la belle région de l'Outaouais. Location de canot et tubes."></meta>
+          <title>Canot Camping Québec - Aventure Rivière Sauvage</title>
+          <link rel="canonical" href="https://aventure-riviere-sauvage.web.app/" />
+          <meta name="twitter:card" content="summary" /> 
+          <meta name="twitter:description" content="Canot Camping Québec - Aventure Rivière Sauvage" /> 
+          <meta name="twitter:title" content="Planifier votre prochaine aventure de canot camping dans la belle région de l'Outaouais. Location de canot et tubes." /> 
           <meta name="twitter:image" content="/images/canoe.jpg" />
+          <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+          <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         </Helmet>
               <nav className="navbarApp" >
                 <NavigationBG className="nav-big-screen"
