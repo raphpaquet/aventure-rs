@@ -44,7 +44,7 @@ return (
             <source src="canoe-video.mp4" />
             Sorry this video is unavailable
           </video>
-          <h2 className="hero-heading">{content.name}</h2>
+          <h1 className="hero-heading">{content.name}</h1>
           <div className="hero-subheading">{content.summary}</div>
         <Link to="/reservations"><button className="button reserve">
           {content.button}

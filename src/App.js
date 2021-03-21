@@ -68,6 +68,11 @@ function App(props) {
         <Helmet>
           <meta name="description" content={content.description}></meta>
           <title>{content.seoTitle}</title>
+          <link rel="canonical" href="https://aventure-riviere-sauvage.web.app/" />
+          <meta name="twitter:card" content="summary" /> 
+          <meta name="twitter:description" content="Canot Camping Québec - Aventure Rivière Sauvage" /> 
+          <meta name="twitter:title" content="Planifier votre prochaine aventure de canot camping dans la belle région de l'Outaouais. Location de canot et tubes." /> 
+          <meta name="twitter:image" content="/images/canoe.jpg" />
         </Helmet>
               <nav className="navbarApp" >
                 <NavigationBG className="nav-big-screen"

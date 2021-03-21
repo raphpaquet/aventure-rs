@@ -20,6 +20,7 @@ export default function Politics(props) {
       <Helmet>
           <meta name="description" content={content.description}></meta>
           <title>{content.seoTitle}</title>
+          <link rel="canonical" href="https://aventure-riviere-sauvage.web.app/politics" />
         </Helmet>
 
     </div>

@@ -46,6 +46,7 @@ props.language === "English" ? (content = content.English) : (content = content.
         <Helmet>
           <meta name="description" content={content.description}></meta>
           <title>{content.seoTitle}</title>
+          <link rel="canonical" href="https://aventure-riviere-sauvage.web.app/navette" />
         </Helmet>
         <div className="activity">
         <section className="nav-image-navette">

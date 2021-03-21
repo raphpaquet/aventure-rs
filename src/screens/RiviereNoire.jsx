@@ -39,6 +39,7 @@ export default function RiviereNoire(props) {
       <Helmet>
           <meta name="description" content={content.description}></meta>
           <title>{content.seoTitle}</title>
+          <link rel="canonical" href="https://aventure-riviere-sauvage.web.app/rivierenoire" />
         </Helmet>
       <h1 className="title">La Rivière Noire</h1>
       <div className="river-description">

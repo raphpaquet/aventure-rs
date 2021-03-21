@@ -21,7 +21,7 @@ export default function Rivieres(props) {
     <div className="section accent">
       <div className="container">
         <div className="section-title-group">
-          <h2 className="section-heading centered">{content.title}</h2>
+          <h1 className="section-heading centered">{content.title}</h1>
           <div className="section-subheading centered">{content.subtitle}</div>
           <div data-duration-in="300" data-duration-out="100" className="tabs-wrapper tabs">
             <ScrollableTabsRiver />

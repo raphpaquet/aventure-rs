@@ -45,6 +45,7 @@ export default function Tube(props) {
         <Helmet>
           <meta name="description" content={content.description}></meta>
           <title>{content.seoTitle}</title>
+          <link rel="canonical" href="https://aventure-riviere-sauvage.web.app/tube" />
         </Helmet>
         <div className="activity">
         <section className="nav-image-tube">

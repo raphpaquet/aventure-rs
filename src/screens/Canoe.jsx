@@ -34,6 +34,7 @@ export default function Canoe(props) {
         <Helmet>
           <meta name="description" content={content.description}></meta>
           <title>{content.seoTitle}</title>
+          <link rel="canonical" href="https://aventure-riviere-sauvage.web.app/canoe" />
         </Helmet>
         <div className="activity">
         <section className="nav-image-canoe">

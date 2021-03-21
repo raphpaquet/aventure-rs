@@ -33,7 +33,7 @@ export default function Activity(props) {
     <div className="section">
       <div className="container">
         <div className="section-title-group">
-          <h2 className="section-heading centered">{content.title}</h2>
+          <h1 className="section-heading centered">{content.title}</h1>
           <div className="section-subheading center">{content.subtitle}</div>
         </div>
         <div className="row">
