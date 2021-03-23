@@ -21,12 +21,18 @@ import RiviereCoulonge from './screens/RiviereCoulonge';
 import Gallery from './screens/Gallery';
 import ReactAudioPlayer from 'react-audio-player';
 import ScrollToTop from './components/ScrollToTop';
+import Error from './components/Error';
+// import AOS from "aos";
+// import "aos/dist/aos.css";
+// import { useEffect } from 'react';
+
 
 
 const history = createBrowserHistory();
 
 
 function App(props) {
+
 
   let languageStoredInLocalStorage = localStorage.getItem("language");
   let [language, setLanguage] = useState(
@@ -40,9 +46,9 @@ function App(props) {
 
   let content = {
     English: {
-      seoTitle: "Canoe Camping Québec - Wilderness River Adventure",
+      seoTitle: "Canoe Camping Québec - Wild River Adventure",
       description: "Plan your next canoe camping trip in the beautiful region of Outaouais. Rent canoe and inflated tubes and have fun on the rivers",
-      name: "Wilderness river adventure",
+      name: "Wild river adventure",
       summary: "Canoe Camping Adventures agency of Outaouais",
       button: "Book for 2021 season"
     },
@@ -65,29 +71,16 @@ function App(props) {
   return (
     <Router history={history} language={language}>
       <div className="App">
-        <Helmet>
-          {/* <meta name="description" content={content.description}></meta>
-          <title>{content.seoTitle}</title>
-          <link rel="canonical" href="https://aventure-riviere-sauvage.web.app/" />
-          <meta name="twitter:card" content="summary" /> 
-          <meta name="twitter:description" content="Canot Camping Québec - Aventure Rivière Sauvage" /> 
-          <meta name="twitter:title" content="Planifier votre prochaine aventure de canot camping dans la belle région de l'Outaouais. Location de canot et tubes." /> 
-          <meta name="twitter:image" content="/images/canoe.jpg" /> */}
-          <meta charset="utf-8" />
-          <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="theme-color" content="#000000" />
-          <meta name="description" content="Planifier votre prochaine aventure de canot camping dans la belle région de l'Outaouais. Location de canot et tubes."></meta>
-          <title>Canot Camping Québec - Aventure Rivière Sauvage</title>
-          <link rel="canonical" href="https://aventure-riviere-sauvage.web.app/" />
-          <meta name="twitter:card" content="summary" /> 
-          <meta name="twitter:description" content="Canot Camping Québec - Aventure Rivière Sauvage" /> 
-          <meta name="twitter:title" content="Planifier votre prochaine aventure de canot camping dans la belle région de l'Outaouais. Location de canot et tubes." /> 
-          <meta name="twitter:image" content="/images/canoe.jpg" />
-          <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-          <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-        </Helmet>
-              <nav className="navbarApp" >
+              <Helmet>
+                <meta name="description" content={content.description}></meta>
+                <title>{content.seoTitle}</title>
+                <link rel="canonical" href="https://aventure-riviere-sauvage.web.app/" />
+                <meta name="twitter:card" content="summary" /> 
+                <meta name="twitter:description" content="Canot Camping Québec - Aventure Rivière Sauvage" /> 
+                <meta name="twitter:title" content="Planifier votre prochaine aventure de canot camping dans la belle région de l'Outaouais. Location de canot et tubes." /> 
+                <meta name="twitter:image" content="/images/canoe.jpg" />
+              </Helmet>
+              <nav className="navbarApp">
                 <NavigationBG className="nav-big-screen"
                   language={language}
                   handleSetLanguage={language => {
@@ -107,7 +100,7 @@ function App(props) {
               />
               <Homepage language={language}/>
               <div ref={activitySectionRef} >
-              <Activity language={language}
+                <Activity language={language}
               />
               </div>
               <Rivieres language={language}/>
@@ -143,6 +136,7 @@ function App(props) {
                 <Gallery language={language}/>
             </Route>
             <Route path="/politique" component={Politics} language={language} />
+            <Route component={Error} status={404} />
           </Switch>
         <Footer 
           language={language}

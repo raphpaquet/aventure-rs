@@ -1,0 +1,13 @@
+@import '../assets/variables';
+
+.error-container {
+  height: 100vh;
+  .subtitle {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .error-img {
+    height: 30%;
+    margin-top: 2rem;
+  }
+}

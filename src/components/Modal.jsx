@@ -1,13 +1,14 @@
-import React from 'react';
+import { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
+
 
 
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
     height: '90%',
-    width: 800,
+    width: '70%',
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
@@ -16,9 +17,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleModal(props) {
   const classes = useStyles();
-  // getModalStyle is not a pure function, we roll the style only on the first render
-  // const [modalStyle] = React.useState(getModalStyle);
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
     setOpen(true);
@@ -30,10 +29,12 @@ export default function SimpleModal(props) {
 
   let content = {
     english: {
-      title: "SEE RIVER CARD",
+      title: "SEE RIVER CARD *",
+      problem: "Your browser does not support PDFs. Please consult the cards on: "
     },
     french: {
-      title: "VOIR LA CARTE DE LA RIVIERE",
+      title: "VOIR LA CARTE DE LA RIVIERE *",
+      problem: "Votre navigateur ne supporte pas les PDFs. Consultez les cartes sur: "
     }
   }
 
@@ -41,10 +42,20 @@ export default function SimpleModal(props) {
 
   const body = (
     <div className={classes.paper}>
-      <object data={props.data} type="application/pdf" width="100%" height="100%">
-          This browser does not support PDFs. Please Download the PDF to view it: Download PDF
+      <object 
+        data={props.data} 
+        type="application/pdf" 
+        width="100%" 
+        height="100%">
+          {/* <iframe 
+            src="http://www.cartespleinair.org/Canot/04/NoireOutaouaisLeduc2018.pdf"
+            width="100%"
+            height="100%"
+            style="border: none"> */}
+            <p>{content.problem}
+              <a href="http://www.cartespleinair.org/Canot/cartes.html" target="_blank" style={{color: "blue"}}>cartespleinair.org</a>.</p>
+          {/* </iframe> */}
         </object>
-      {/* <SimpleModal /> */}
     </div>
   );
 

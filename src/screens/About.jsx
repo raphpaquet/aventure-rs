@@ -5,9 +5,9 @@ export default function About(props) {
 
   let content = {
     English: {
-      seoTitle: "About Wilderness River Adventure",
+      seoTitle: "About Wild River Adventure",
       description: "Learn more about our mission, our team and about the region of Pontiac.",
-      title: "About Wilderness River Adventure",
+      title: "About Wild River Adventure",
       missionTitle: "Our Mission",
       missionP: "",
       teamTitle: "Our Team",

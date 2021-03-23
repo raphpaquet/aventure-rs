@@ -59,9 +59,9 @@ export default function RiviereNoire(props) {
           language={props.language}
         />
       </div>
-      <div className="carte-container-small-screen">
+      {/* <div className="carte-container-small-screen">
         <a href="http://www.cartespleinair.org/Canot/04/NoireOutaouaisLeduc2018.pdf" target="_blank" className="button">Voir les cartes de la riviere</a>
-      </div>
+      </div> */}
         <p>Molestie nunc non blandit massa enim nec dui nunc mattis. Nunc consequat interdum varius sit amet mattis vulputate enim nulla. Non curabitur gravida arcu ac tortor dignissim convallis aenean. Nunc congue nisi vitae suscipit tellus mauris. Iaculis urna id volutpat lacus laoreet. Magnis dis parturient montes nascetur ridiculus. Enim facilisis gravida neque convallis. Tortor at risus viverra adipiscing at in tellus integer feugiat. Euismod lacinia at quis risus sed vulputate odio ut enim. Ornare suspendisse sed nisi lacus. Neque ornare aenean euismod elementum nisi quis.</p>
       </div>
       <div className="cards-website">{content.cardWebsite}: <a href="http://www.cartespleinair.org/Canot/cartes.html" target="_blank">www.cartespleinair.org</a></div>

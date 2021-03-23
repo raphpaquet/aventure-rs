@@ -21,10 +21,14 @@
     align-items: center;
     .address {
       font-family: $font-title;
-      color: $primary-color;
+      color: $color-contrast;
       margin: 2rem 5rem;
       p{
         color: gray;
+        margin: 2rem;
+      }
+      h4 {
+        margin: 2rem;
       }
     }
     .map-container {
@@ -38,7 +42,7 @@
     margin-top: 5rem;
     margin-bottom: 10rem;
     .icon {
-      color: $primary-color;
+      color: $color-contrast;
       transform: scale(3);
       margin: 2rem 3rem;
     }

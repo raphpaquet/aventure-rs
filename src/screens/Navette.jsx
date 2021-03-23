@@ -6,8 +6,12 @@ import parse from 'html-react-parser';
 
 
 
+
 export default function Canoe(props) {
 
+  // useEffect(() => {
+  //   AOS.init({ duration: 2000 });
+  // }, [])
 
  const activityRef = useRef();
 
@@ -54,7 +58,7 @@ props.language === "English" ? (content = content.English) : (content = content.
               <h3 className="activity-title dark" onClick={handleClick}>{content.title}<ArrowDown onClick={handleClick}/></h3>
             </div>
         </section>
-        <section className="activity-info" ref={activityRef}>
+        <section className="activity-info" ref={activityRef} >
             <h2 className="activity-summary">{content.subtitle}</h2>
             <div className="activity-container">
               <img className="tube-map" src="/images/map.png" alt="carte de la ville" />

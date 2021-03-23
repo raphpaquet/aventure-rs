@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import DropDownMenuLrgScreen from '../components/DropdownMenuLrgScreen';
 import DropDownMenuSmScreen from './DropDownMenuSmScreen';
 import MenuIcon from '@material-ui/icons/Menu';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 
 
@@ -85,13 +86,13 @@ export default function Navigation(props) {
       </div>
         <ul className="list-action" >
           <li className="nav-item-large">
-            <div className="action-li" onClick={() => openMenu('activities')}>{content.activity}</div>
+            <div className="action-li" onClick={() => openMenu('activities')}>{content.activity}<KeyboardArrowDownIcon /></div>
           </li>
           <li className="nav-item-large">
-            <div className="action-li" onClick={() => openMenu('rivers')}>{content.river}</div>
+            <div className="action-li" onClick={() => openMenu('rivers')}>{content.river}<KeyboardArrowDownIcon /></div>
           </li>
           <li className="nav-item-large">
-            <div className="action-li" onClick={() => openMenu('about')}>{content.about}</div>
+            <div className="action-li" onClick={() => openMenu('about')}>{content.about}<KeyboardArrowDownIcon /></div>
           </li>
           {open && <DropDownMenuLrgScreen language={props.language} goToMenu={menu} close={() => closeMenu()}/>}
           <Link to="/reservations"><li className="action-li" onClick={() => closeMenu()}>{content.booking}</li></Link>
@@ -110,7 +111,16 @@ export default function Navigation(props) {
       </div>
       <div id="nav-small-screen">
         <Link to="/"><img className="logo-small-screen" src="/images/logo.png" alt="ARS logo" /></Link>
-        <li className="nav-item">
+        <div className="language-select select-sml">
+                <select 
+                  className="custom-select"
+                  value={props.language}
+                  onChange={e => props.handleSetLanguage(e.target.value)}>
+                    <option value="English">En</option>
+                    <option value="French">Fr</option>
+                  </select>
+              </div>
+        <li className="nav-item select-sml">
         <div className="icon-button burger" onClick={() => setOpen(!open)}><MenuIcon /></div>
         </li>
         {open && 

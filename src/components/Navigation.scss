@@ -36,12 +36,14 @@
       color: white;
       cursor: pointer;
       &:hover {
+        color: $color-contrast;
         border: 1px white solid;
-        opacity: 0.7;
+        opacity: 0.8;
       }
     }
   }
   #nav-small-screen {
+    flex-grow: 1;
     position: absolute;
     visibility: hidden;
     display: flex;
@@ -49,12 +51,27 @@
     align-items: center;
     z-index: 1;
     height: 15rem;
+    a {
+      flex-grow: 3;
+    }
     .logo-small-screen {
       height: 6rem;
       margin: 4rem 4rem;
       float: left;
       position: absolute;
       filter: invert(1);
+    }
+    .select-sml {
+      margin-bottom: 0.5rem;
+      display: flex;
+      flex-grow: 0.1;
+      width: fit-content;
+    }
+    .burger {
+      flex-grow: 1;
+      width: fit-content;
+      margin-right: 3rem;
+    margin-left: 2rem;
     }
   }
   nav {

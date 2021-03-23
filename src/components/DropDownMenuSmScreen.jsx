@@ -96,17 +96,6 @@ export default function DropDownMenuSmScreen(props) {
           <DropdownItem>
             <Link to="/contact" onClick={props.close}>Contact</Link>
           </DropdownItem>
-          <DropdownItem>
-            <div className="language-select">
-                <select 
-                  className="custom-select"
-                  value={props.language}
-                  onChange={e => props.handleSetLanguage(e.target.value)}>
-                    <option value="English">En</option>
-                    <option value="French">Fr</option>
-                  </select>
-              </div>
-          </DropdownItem>
         </div>
       </CSSTransition>
 
