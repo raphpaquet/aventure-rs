@@ -101,6 +101,7 @@ export default function ScrollableTabsRiver(props) {
         <Tabs
           value={value}
           onChange={handleChange}
+          TabIndicatorProps={{ style: { background: "#f8c740", height: "0.5rem" } }}
           indicatorColor={"#f8c740"}
           textColor={"#f8c740"}
           variant="scrollable"
