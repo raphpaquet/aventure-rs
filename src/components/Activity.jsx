@@ -2,9 +2,7 @@ import { Link } from 'react-router-dom';
 
 
 export default function Activity(props) {
-
-
-
+  
   let content = {
     English: {
       title: "What we offer",
@@ -39,8 +37,8 @@ export default function Activity(props) {
           <h1 className="section-heading centered">{content.title}</h1>
           <div className="section-subheading center">{content.subtitle}</div>
         </div>
-        <div className="row">
-          <div className="column col col-4" >
+        <div className="row" >
+          <div className="column col col-4">
               <Link to="/canoe"><div className="white-box" ><img src="./images/icon-canoe.png" alt="logo" width="70" class="grid-image"/>
                 <h3>{content.canoe}</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -48,7 +46,7 @@ export default function Activity(props) {
               </div></Link>
           </div>
           <div className="column col col-4">
-            <Link to="/tube"><div className="white-box"><img src="./images/icon-tube.png" alt="logo" width="70" class="grid-image" />
+            <Link to="/tube"><div className="white-box" ><img src="./images/icon-tube.png" alt="logo" width="70" class="grid-image" />
               <h3>{content.tube}</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <a href="/reservations" className="button">{content.reserve}</a>

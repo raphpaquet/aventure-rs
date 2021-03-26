@@ -29,16 +29,16 @@ export default function SimpleModal(props) {
 
   let content = {
     english: {
-      title: "SEE RIVER CARD *",
+      title: "SEE RIVER CARDs *",
       problem: "Your browser does not support PDFs. Please consult the cards on: "
     },
     french: {
-      title: "VOIR LA CARTE DE LA RIVIERE *",
+      title: "VOIR Les CARTEs DE LA RIVIERE *",
       problem: "Votre navigateur ne supporte pas les PDFs. Consultez les cartes sur: "
     }
   }
 
-  props.language === "french" ? (content = content.french) : (content = content.english);
+  props.language === "English" ? (content = content.english) : (content = content.french);
 
   const body = (
     <div className={classes.paper}>

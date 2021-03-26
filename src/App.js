@@ -1,6 +1,6 @@
 import './App.scss';
 import Footer from './components/Footer';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from 'history';
 import { Helmet } from 'react-helmet';
@@ -19,12 +19,8 @@ import Homepage from './screens/Homepage';
 import NavigationBG from './components/NavgationBG';
 import RiviereCoulonge from './screens/RiviereCoulonge';
 import Gallery from './screens/Gallery';
-import ReactAudioPlayer from 'react-audio-player';
 import ScrollToTop from './components/ScrollToTop';
 import Error from './components/Error';
-// import AOS from "aos";
-// import "aos/dist/aos.css";
-// import { useEffect } from 'react';
 
 
 
@@ -50,14 +46,33 @@ function App(props) {
       description: "Plan your next canoe camping trip in the beautiful region of Outaouais. Rent canoe and inflated tubes and have fun on the rivers",
       name: "Wild river adventure",
       summary: "Canoe Camping Adventures agency of Outaouais",
-      button: "Book for 2021 season"
+      button: "Book for 2021 season", 
+      lang: "en",
+      path: {
+        canoe: 'canoe',
+        tube: 'tube',
+        shuttle: 'shuttle',
+        booking: 'booking',
+        security: 'security',
+        politic: 'politic',
+        gallery: 'gallery'
+      }
     },
     French: {
       seoTitle: "Canot Camping Québec - Aventure Rivière Sauvage",
       description: "Planifier votre prochaine aventure de canot camping dans la belle région de l'Outaouais. Location de canot et tubes.",
       name: "Aventure rivière sauvage",
       summary: "Agence d'aventures de canot camping de l'Outaouais",
-      button: "Réserver pour la saison 2021"
+      button: "Réserver pour la saison 2021",
+      path: {
+        canoe: 'canot',
+        tube: 'tube',
+        shuttle: 'navette',
+        booking: 'réservation',
+        security: 'securité',
+        politic: 'politiques',
+        gallery: 'gallerie'
+      }
     }
   }
 
@@ -69,7 +84,7 @@ function App(props) {
 
 
   return (
-    <Router history={history} language={language}>
+    <Router onUpdate={() => window.scrollTo(0, 0)} history={history} language={language}>
       <div className="App">
               <Helmet>
                 <meta name="description" content={content.description}></meta>
@@ -90,20 +105,15 @@ function App(props) {
                   ref={activitySectionRef}
                   />
               </nav> 
-            <ScrollToTop />
               <Switch>
             <Route path="/" exact>
-            <ReactAudioPlayer
-                src='forest-sounds.mp3'
-                autoPlay
-                loop
-              />
-              <Homepage language={language}/>
-              <div ref={activitySectionRef} >
-                <Activity language={language}
-              />
-              </div>
-              <Rivieres language={language}/>
+                <ScrollToTop />
+                <Homepage language={language}/>
+                <div ref={activitySectionRef} >
+                  <Activity language={language}
+                />
+                </div>
+                <Rivieres language={language}/>
             </Route>
             <Route path="/canoe">
               <Canoe language={language}/> 
@@ -138,8 +148,7 @@ function App(props) {
             <Route path="/politique" component={Politics} language={language} />
             <Route component={Error} status={404} />
           </Switch>
-        <Footer 
-          language={language}
+        <Footer language={language}
         />
       </div>
     </Router>

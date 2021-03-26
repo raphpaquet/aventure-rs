@@ -1,17 +1,11 @@
 import './Canoe.scss';
-import ArrowDown from '../components/ArrowDown';
 import { useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import parse from 'html-react-parser';
-
-
+import ArrowDown from '../components/ArrowDown';
 
 
 export default function Canoe(props) {
-
-  // useEffect(() => {
-  //   AOS.init({ duration: 2000 });
-  // }, [])
 
  const activityRef = useRef();
 

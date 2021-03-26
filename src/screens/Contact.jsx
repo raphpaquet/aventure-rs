@@ -1,11 +1,20 @@
 import './Contact.scss';
+import { useEffect } from 'react';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import MapContainer from '../components/Map';
 import { Helmet } from 'react-helmet';
+import AOS from 'aos';
+import "aos/dist/aos.css"
 
 
 export default function Contact(props) {
+
+  useEffect(() => {
+    AOS.init({
+      duration : 1000
+    });
+  }, [])
 
   const positionARS = {
     lat: 45.983288,
@@ -48,14 +57,14 @@ export default function Contact(props) {
       <div className="contact">
         <h2 className="title">{content.title}</h2>
         <div className="map">
-          <div className="address">
-            <h3>{content.address} </h3>
+          <div className="address" data-aos={"fade-right"}>
+            <h3 >{content.address} </h3>
               <p>1111 rue de la Rivière Noire, <br></br>Pontiac, Quebec, H6fD4G</p>
             <a href="https://www.google.com/maps/dir//45.983288,-76.833335/@45.983288,-76.8355237,17z/data=!4m2!4m1!3e0" className="button" target="_blank">{content.direction}</a>
-            <h4>{content.call}</h4>
+            <h5>{content.call}</h5>
               <p>514.555.5555</p>
-            <h4>{content.email}</h4>
-              <p><a href="mailto:paquetraphaelle@example.com">ars@gmail.com</a></p>
+            <h5>{content.email}</h5>
+              <p><a href="mailto:paquetraphaelle@example.com" style={{color:"darkblue"}}>ars@gmail.com</a></p>
           </div>
           <div className="map-container">
             <MapContainer 
@@ -64,10 +73,10 @@ export default function Contact(props) {
           </div>
         </div>
         <div className="follow">
-          <h2 className="title">{content.follow}</h2>
+          <h2 className="title" data-aos={"flip-left"}>{content.follow}</h2>
           <div className="icon-social">
-            <InstagramIcon className="icon"/>
-            <FacebookIcon className="icon"/>
+            <a href="www.facebook.com" target="_blank"><InstagramIcon className="icon"/></a>
+            <a href="www.instagram.com" target="_blank"><FacebookIcon className="icon"/></a>
           </div>
           <img src="/images/instagram-photo.jpg" className="ig-img" alt="apercu d'un profil instagram"/>
         </div>

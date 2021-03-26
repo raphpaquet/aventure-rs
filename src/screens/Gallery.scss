@@ -1,0 +1,14 @@
+@import "react-alice-carousel/lib/scss/alice-carousel.scss";
+
+.gallery {
+  .alice-carousel__play-btn {
+    float:right;
+  }
+  .title {
+    margin-bottom: 3rem;
+  }
+  .grid-photo {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+  }
+}

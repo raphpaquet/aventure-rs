@@ -29,7 +29,18 @@ export default function DropDownMenuLrgScreen(props) {
       noire: "River Noire",
       coulonge: "River Coulonge",
       company: "The Company",
-      security: "Security"
+      security: "Security",
+      lang: 'en',
+      path: {
+        canoe: 'canoe',
+        tube: 'tube',
+        shuttle: 'shuttle',
+        booking: 'booking',
+        about: 'about',
+        security: 'security',
+        politic: 'politic',
+        gallery: 'gallery'
+      }
     },
     French: {
       canoe: "Canot",
@@ -38,7 +49,18 @@ export default function DropDownMenuLrgScreen(props) {
       noire: "Rivère Noire",
       coulonge: "Rivère Coulonge",
       company: "L'entreprise",
-      security: "Securité"
+      security: "Securité",
+      lang: 'fr',
+        path: {
+          canoe: 'canot',
+          tube: 'tube',
+          shuttle: 'navette',
+          booking: 'réservation',
+          about: 'àpropos',
+          security: 'securité',
+          politic: 'politiques',
+          gallery: 'gallerie'
+        }
     }
   }
  

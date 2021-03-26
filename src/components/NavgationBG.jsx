@@ -6,6 +6,9 @@ import DropDownMenuLrgScreen from '../components/DropdownMenuLrgScreen';
 import DropDownMenuSmScreen from './DropDownMenuSmScreen';
 import MenuIcon from '@material-ui/icons/Menu';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import VolumeOffIcon from '@material-ui/icons/VolumeOff';
+import VolumeUpIcon from '@material-ui/icons/VolumeUp';
+import ReactAudioPlayer from 'react-audio-player';
 
 
 
@@ -14,7 +17,9 @@ export default function Navigation(props) {
     // Burger menu open/close
     const [open, setOpen] = useState(false);
     const [menu, setMenu] = useState("");
+    const [mute, setMuted] = useState(false)
 
+    // nav dropdown close on outside click 
     const node = useRef();
 
     const handleClickOutside = e => {
@@ -26,6 +31,8 @@ export default function Navigation(props) {
       // outside click
       setOpen(false);
     };
+
+
   
     useEffect(() => {
       if (open) {
@@ -33,7 +40,6 @@ export default function Navigation(props) {
       } else {
         document.removeEventListener("mousedown", handleClickOutside);
       }
-  
       return () => {
         document.removeEventListener("mousedown", handleClickOutside);
       };
@@ -48,6 +54,7 @@ export default function Navigation(props) {
       setOpen(false)
     }
 
+    // set language 
     let languageStoredInLocalStorage = localStorage.getItem("language");
     let [language, setLanguage] = useState(
       languageStoredInLocalStorage ? languageStoredInLocalStorage : "English"
@@ -59,14 +66,25 @@ export default function Navigation(props) {
 
 
     let content = {
-      English: {
+      english: {
         activity: "Activities",
         river: "Rivers",
         about: "About",
         booking: 'Booking',
-        gallery: "Gallery"
+        gallery: "Gallery",
+        lang: "en",
+        path: {
+          canoe: 'canoe',
+          tube: 'tube',
+          shuttle: 'shuttle',
+          booking: 'booking',
+          about: 'about',
+          security: 'security',
+          politic: 'politic',
+          gallery: 'gallery'
+        }
       },
-      French: {
+      french: {
         activity: "Activités",
         river: "Rivières",
         about: "À propos",
@@ -75,7 +93,7 @@ export default function Navigation(props) {
       }
     }
    
-    props.language === "English" ? (content = content.English) : (content = content.French);
+    props.language === "English" ? (content = content.english) : (content = content.french);
 
   return (
 
@@ -85,6 +103,16 @@ export default function Navigation(props) {
         <Link to="/"><img className="logo" src="/images/logo.png" alt="ARS logo" /></Link>
       </div>
         <ul className="list-action" >
+        <li className="nav-item-large">
+            <div className="action-li" onClick={() => setMuted(!mute)} style={{transform:"scale(1.5)", marginTop:"0.5rem"}}>{mute ? <VolumeUpIcon /> : <VolumeOffIcon />}
+            <ReactAudioPlayer
+              src='forest-sounds.mp3'
+              autoPlay
+              muted={mute}
+              loop
+            />
+            </div>
+          </li>
           <li className="nav-item-large">
             <div className="action-li" onClick={() => openMenu('activities')}>{content.activity}<KeyboardArrowDownIcon /></div>
           </li>

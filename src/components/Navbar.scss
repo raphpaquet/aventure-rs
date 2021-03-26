@@ -40,12 +40,13 @@ $button-size: calc(#{$nav-size} * 0.5);
 /* Dropdown Menu */
 
 .dropdown {
+  z-index: 10;
   opacity: 0.9;
   position: absolute;
   font-family: $font-title;
   text-transform: uppercase;
   top: 100px;
-  width: 300px;
+  width: 400px;
   border-radius: $border-radius;
   padding: 1rem;
   overflow: hidden;color: black;

@@ -1,10 +1,20 @@
 import './Riviere.scss';
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import MapContainer from '../components/Map';
 import Modal from '../components/Modal';
+import ScrollToTop from '../components/ScrollToTop'
+import AOS from 'aos';
+import "aos/dist/aos.css";
 
 
 export default function RiviereNoire(props) {
+
+useEffect(() => {
+  AOS.init({
+    duration : 1000
+  });
+}, [])
 
   const data="/PDF/NoirePDF.pdf";
 
@@ -41,11 +51,12 @@ export default function RiviereNoire(props) {
           <title>{content.seoTitle}</title>
           <link rel="canonical" href="https://aventure-riviere-sauvage.web.app/rivierenoire" />
         </Helmet>
-      <h1 className="title">La Rivière Noire</h1>
-      <div className="river-description">
+        <ScrollToTop />
+      <h1 className="title" data-aos={"fade-down"}>La Rivière Noire</h1>
+      <div className="river-description" data-aos={"fade-down"}>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam viverra orci sagittis eu volutpat. Placerat vestibulum lectus mauris ultrices eros in. In nibh mauris cursus mattis molestie a iaculis. Fermentum odio eu feugiat pretium nibh. Volutpat lacus laoreet non curabitur gravida arcu ac tortor dignissim. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Blandit turpis cursus in hac. Tempor id eu nisl nunc. Quis imperdiet massa tincidunt nunc pulvinar sapien.</p>
-        <img src="./images/river.jpg" alt="riviere noire" className="river-image"/>
-        <p>Facilisis gravida neque convallis a cras semper auctor. Nec feugiat in fermentum posuere urna nec tincidunt praesent. Vivamus arcu felis bibendum ut tristique et. Vel risus commodo viverra maecenas accumsan lacus vel. Tincidunt vitae semper quis lectus nulla. Risus sed vulputate odio ut enim blandit volutpat maecenas.</p>
+        <img src="./images/river.jpg" alt="riviere noire" className="river-image" data-aos={"fade-down"}/>
+        <p data-aos={"fade-down"}>Facilisis gravida neque convallis a cras semper auctor. Nec feugiat in fermentum posuere urna nec tincidunt praesent. Vivamus arcu felis bibendum ut tristique et. Vel risus commodo viverra maecenas accumsan lacus vel. Tincidunt vitae semper quis lectus nulla. Risus sed vulputate odio ut enim blandit volutpat maecenas.</p>
         <div className="map-container">
           <MapContainer 
           className="river-map"

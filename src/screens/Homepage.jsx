@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { Link } from "react-router-dom";
 import ArrowDown from '../components/ArrowDown';
 import ReactAudioPlayer from 'react-audio-player';
+import ScrollToTop from '../components/ScrollToTop';
 
 
 export default function Homepage(props) {
@@ -33,11 +34,7 @@ export default function Homepage(props) {
 
 return (
     <div id="homepage">
-      {/* <ReactAudioPlayer
-        src='forest-sounds1.wav'
-        autoPlay
-        loop
-      /> */}
+      <ScrollToTop />
       <main>
         <section className="hero-section centered">
           <video id="background-video" autoPlay loop muted type="video/mp4">
