@@ -60,7 +60,7 @@ export default function Contact(props) {
           <div className="address" data-aos={"fade-right"}>
             <h3 >{content.address} </h3>
               <p>1111 rue de la Rivière Noire, <br></br>Pontiac, Quebec, H6fD4G</p>
-            <a href="https://www.google.com/maps/dir//45.983288,-76.833335/@45.983288,-76.8355237,17z/data=!4m2!4m1!3e0" className="button" target="_blank">{content.direction}</a>
+            <a href="https://www.google.com/maps/dir//45.983288,-76.833335/@45.983288,-76.8355237,17z/data=!4m2!4m1!3e0" className="button" target="_blank" rel="noreferrer">{content.direction}</a>
             <h5>{content.call}</h5>
               <p>514.555.5555</p>
             <h5>{content.email}</h5>
@@ -73,7 +73,7 @@ export default function Contact(props) {
           </div>
         </div>
         <div className="follow">
-          <h2 className="title" data-aos={"flip-left"}>{content.follow}</h2>
+          <h2 className="title">{content.follow}</h2>
           <div className="icon-social">
             <a href="www.facebook.com" target="_blank"><InstagramIcon className="icon"/></a>
             <a href="www.instagram.com" target="_blank"><FacebookIcon className="icon"/></a>

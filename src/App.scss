@@ -6,7 +6,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
   overflow-x: hidden;
   #background-video {
     background-attachment: fixed;
@@ -41,14 +40,14 @@
       color: $color-contrast;
       font-size: 2.5rem;
       line-height: 2.5rem;
-      font-weight: 400;
+      font-weight: 500;
       letter-spacing: 0.3rem;
       text-transform: uppercase;
+      text-shadow: 1px 1px 2px #0c0c0c;
     }
   }
 
   nav {
-    // z-index: 1;
     .nav-links {
       display: flex;
       list-style: none;
@@ -67,6 +66,18 @@
       cursor: pointer;
     }
   }
+
+  .special {
+    background-color: #00040a6e;
+    box-shadow: 1px 2px 4px black;
+    color: white;
+    &:hover {
+      background-color: $color-contrast;
+      color: #404047
+    }
+  }
+
+  
 
 
   @media screen and (max-width: 991px) {

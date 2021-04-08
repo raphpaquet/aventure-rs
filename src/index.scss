@@ -6,7 +6,7 @@ html {
   font-size: 62.5%; /* 16px * 62.5 = 10px = 1rem */
   width: 100% !important;
   overflow: scroll;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 body {
   background-color: white;
@@ -35,17 +35,6 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.reserve {
-  margin-right: 2rem !important;
-  margin-left: 2rem !important;
-}
-.title {
-  font-family: $font-title;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: black;
 }
 
 h1 {
@@ -104,6 +93,16 @@ p {
   font-size: 14px;
   line-height: 25px;
   font-weight: 300;
+}
+.reserve {
+  margin-right: 2rem !important;
+  margin-left: 2rem !important;
+}
+.title {
+  font-family: $font-title;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: black;
 }
 .fullwidth-image {
   width: 100%;
@@ -246,8 +245,22 @@ p {
   opacity: 1; 
   transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); 
   transform-style: preserve-3d;
+  &:hover {
+    animation: zoomIn 1s;
+  }
 }
 
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+      transform: scale(1.1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
 
 /* SECTION RIVIERES */
 .accent {

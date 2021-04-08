@@ -20,7 +20,7 @@ export default function Tube(props) {
    English: {
      seoTitle: "River Tubing",
      description: "Come enjoy the lovely flow of the rivers and float your way down on our renting tubes.",
-     title: "River tubing on Rivière Noire",
+     title: "River tubing",
      subtitle: "Calm and peacful descent of 7km",
      activityDescription: `<p className='activity-text'> Length : approx 3 hours </p><p className='activity-text'>Difficulty: easy/beginner</p>
      <p className='activity-text'>Price: starting at 20$</p><p className='activity-text'>Inclusions: Tube & Shuttle to departure point </p>`,
@@ -30,7 +30,7 @@ export default function Tube(props) {
    French: {
      seoTitle: "Descente de rivière sur tube",
      description: "Venez profiter de l'agréable courant des rivières et descendez en flottant sur nos tubes de location.",
-     title: `Descente de la Rivière Noire sur tube`,
+     title: `Descente sur tube`,
      subtitle: "Descente de rivière de plaisance de 7km sur la Rivière Noire",
      activityDescription: `<p className='activity-text'> Durée : environ 3 heures </p><p className='activity-text'>Difficulté: facile/débutant</p>
      <p className='activity-text'>Prix : À partir de 20$</p><p className='activity-text'>Inclusions: Tube & Navette jusqu'au point de départ </p>`,

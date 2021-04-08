@@ -43,7 +43,7 @@ return (
           </video>
           <h1 className="hero-heading">{content.name}</h1>
           <div className="hero-subheading">{content.summary}</div>
-        <Link to="/reservations"><button className="button reserve">
+        <Link to="/reservations"><button className="button reserve special">
           {content.button}
           </button></Link>
           <div className="arrow-app">

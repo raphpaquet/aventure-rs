@@ -9,6 +9,7 @@
       .nav-image-canoe{
         background: url('../assets/canoe.jpg');
         background-size: cover;
+        background-position: 40%;
         height: 100vh;
         width: 100%;
       }
@@ -23,14 +24,14 @@
         background-size: cover;
         height: 100vh;
         width: 100%;
-        background-position: 50%;
+        background-position: 40%;
       }
     .img-text {
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      margin-top: 60rem;
+      margin-top: 10rem;
       margin-right: 5rem;
       .activity-img {
         width: 100vw;
@@ -40,12 +41,14 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        color: white;
         font-size: 6rem;
-        font-weight: bold;
-        font-family: $font-contrail;
-        text-shadow: 1px 3px 4px black;
+        font-weight: 800;
+        font-family: 'Raleway';
+        text-shadow: 1px 3px 7px $color-contrast;
         cursor: pointer;
+        -webkit-text-stroke: 3px #180e00;
+        color: transparent;
+        line-height: 7rem;
       }
     }
     .activity-info {
@@ -107,7 +110,7 @@
   #activity {
     .activity {
       .img-text {
-        margin-top: 60rem;
+        // margin-top: 60rem;
         margin-right: 3rem;
         .activity-title {
         }
@@ -121,7 +124,7 @@
     max-width: 100vw;
     .activity {
       .img-text {
-        margin-top: 60rem;
+        // margin-top: 60rem;
       }
     }
     .activity-info {
@@ -173,11 +176,10 @@
         background-position: 30%;
       }
       .img-text {
-        margin-top: 35rem;
+        // margin-top: 35rem;
         margin-left: 4rem;
         .activity-title {
-          font-size: 3rem;
-          margin-right: 1rem;
+          font-size: 5rem;
         }
       }
     }

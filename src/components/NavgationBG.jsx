@@ -140,6 +140,14 @@ export default function Navigation(props) {
       <div id="nav-small-screen">
         <Link to="/"><img className="logo-small-screen" src="/images/logo.png" alt="ARS logo" /></Link>
         <div className="language-select select-sml">
+        <div className="volume" onClick={() => setMuted(!mute)} style={{color:"white", transform:"scale(1.5)", marginRight:"1rem"}}>{mute ? <VolumeUpIcon /> : <VolumeOffIcon />}
+            <ReactAudioPlayer
+              src='forest-sounds.mp3'
+              autoPlay
+              muted={mute}
+              loop
+            />
+          </div>
                 <select 
                   className="custom-select"
                   value={props.language}
