@@ -4,12 +4,14 @@ export default function Security(props) {
 
   let content = {
     English: {
-      seoTitle: "River Tubing",
-      description: "inflated tubes location to do river floating in Outaouais"
+      seoTitle: "River Security guide",
+      description: "How to be safe on our Rivers while doing Canoe Camping",
+      title: "Security"
     },
     French: {
-      seoTitle: "Descente de rivière sur tube",
-      description: "Location de tubes gonflables pour faire une descente de rivière"
+      seoTitle: "Sécurité sur les rivières",
+      description: "Guide de sécurité pour le canot camping",
+      title:"Sécurité"
     }
   }
  
@@ -22,7 +24,8 @@ export default function Security(props) {
           <title>{content.seoTitle}</title>
           <link rel="canonical" href="https://aventure-riviere-sauvage.web.app/security" />
         </Helmet>
-      
+      <h2 className="title">{content.title}</h2>
+      <img src="/images/coming-soon.png" alt="coming soon paint brush orange" className="coming-soon" />
     </div>
   )
 }

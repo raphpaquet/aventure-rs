@@ -17,8 +17,8 @@ export default function Contact(props) {
   }, [])
 
   const positionARS = {
-    lat: 45.983288,
-    lng: -76.833335
+    lat: 45.957845,
+    lng: -77.199375
   }
 
 
@@ -59,12 +59,12 @@ export default function Contact(props) {
         <div className="map">
           <div className="address" data-aos={"fade-right"}>
             <h3 >{content.address} </h3>
-              <p>1111 rue de la Rivière Noire, <br></br>Pontiac, Quebec, H6fD4G</p>
+              <p>1111 rue de la Rivière, <br></br>Quebec, XXXZZZZ, Canada</p>
             <a href="https://www.google.com/maps/dir//45.983288,-76.833335/@45.983288,-76.8355237,17z/data=!4m2!4m1!3e0" className="button" target="_blank" rel="noreferrer">{content.direction}</a>
             <h5>{content.call}</h5>
               <p>514.555.5555</p>
             <h5>{content.email}</h5>
-              <p><a href="mailto:paquetraphaelle@example.com" style={{color:"darkblue"}}>ars@gmail.com</a></p>
+              <p><a href="mailto:paquetraphaelle@example.com" style={{color:"darkblue"}}>aro@exemple.com</a></p>
           </div>
           <div className="map-container">
             <MapContainer 

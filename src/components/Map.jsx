@@ -190,11 +190,17 @@ export default function MapContainer (props) {
   ]
 
 
-
+  // ARS localisation
+  // const defaultCenter = {
+  //   lat: 45.983288,
+  //   lng: -76.833335
+  // }
+  // Fake
   const defaultCenter = {
-    lat: 45.983288,
-    lng: -76.833335
+    lat: 45.957845,
+    lng: -77.199375
   }
+
 
  
 
@@ -228,7 +234,7 @@ export default function MapContainer (props) {
           position={props.position}
         />
         <Marker
-          label="ARS"
+          label="ARO"
           name='Company Location'
           position={defaultCenter}
         />

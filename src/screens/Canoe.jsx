@@ -11,12 +11,12 @@ export default function Canoe(props) {
   let content = {
     English: {
       seoTitle: "Canoe Location",
-      description: "Canoe location for canoe camping trip in Pontiac",
+      description: "Canoe location for canoe camping trip",
       title: "Canoe Camping",
     },
     French: {
       seoTitle: "Location de canot",
-      description: "Location de canot pour des aventures de canot camping dans Pontiac",
+      description: "Location de canot pour des aventures de canot camping",
       title: "Canot Camping",
     }
   }

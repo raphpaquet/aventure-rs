@@ -2,7 +2,6 @@ import '../App.scss';
 import { useRef } from 'react';
 import { Link } from "react-router-dom";
 import ArrowDown from '../components/ArrowDown';
-import ReactAudioPlayer from 'react-audio-player';
 import ScrollToTop from '../components/ScrollToTop';
 
 
@@ -17,15 +16,15 @@ export default function Homepage(props) {
     English: {
       seoTitle: "Wild River Adventure | Pontiac, Outaouais",
       description: "Canoe camping adventures agency and tube renting in Outaouais",
-      name: "Wild river adventure",
-      summary: "Canoe Camping in Outaouais",
+      name: "West River Adventure",
+      summary: "Canoe Camping in Quebec | FAKE WEBSITE",
       button: "Book Online for 2021 season"
     },
     French: {
       seoTitle: "Aventure Rivière Sauvage",
       description: "Agence d'aventures de canot camping et de location de tubes en Outaouais",
-      name: "Aventure rivière sauvage",
-      summary: "canot camping dans l'Outaouais",
+      name: "Aventure Riviere de l'Ouest",
+      summary: "canot camping au Quebec | FAUX SITE WEB",
       button: "Réserver en ligne pour la saison 2021"
     }
   }

@@ -34,7 +34,7 @@ export default function Footer(props) {
       <div className="row">
         <div className="col col-3">
           <h5>{content.adress}</h5>
-          <p>112 Avenue des Sources, Pontiac, Quebec, H7F2H6, Canada</p>
+          <p>111 rue de la Riviere, Quebec, XXXZZZ, Canada</p>
         </div>
         <div className="col col-3">
           <h5>{content.links}</h5>

@@ -27,6 +27,7 @@ export default function Reservations(props) {
           <link rel="canonical" href="https://aventure-riviere-sauvage.web.app/reservations" />
         </Helmet>
       <h2 className="title">{content.title}</h2>
+      <img src="/images/coming-soon.png" alt="coming soon paint brush orange" className="coming-soon" />
     </div>
   )
 }

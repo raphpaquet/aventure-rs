@@ -15,7 +15,7 @@ export default function About(props) {
 
   let content = {
     English: {
-      seoTitle: "About Wild River Adventure",
+      seoTitle: "About",
       description: "Learn more about our mission, our team and about the region of Pontiac.",
       title: "About Wild River Adventure",
       missionTitle: "Our Mission",
@@ -26,7 +26,7 @@ export default function About(props) {
       regionP: ""
     },
     French: {
-      seoTitle: "À propos d'Aventure Rivière Sauvage",
+      seoTitle: "À propos",
       description: "Apprenez-en plus sur notre mission d'entreprise, notre équipe et la région du Pontiac.",
       title: "À propos d'Aventure Rivière Sauvage",
       missionTitle: "Notre Mission",
